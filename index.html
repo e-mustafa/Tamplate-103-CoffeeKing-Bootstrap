@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link rel="stylesheet" href="css/bootstrap.css">            <!--  bootstrap link -->
+   <link rel="stylesheet" href="css/all.min.css">              <!--  fontawesome link -->
+   <link rel="stylesheet" href="css/style.css">                <!--  my style link -->
+
+   <link rel="icon" href="/images/01.png" type="image/x-icon">
+   <title>CoffeKing</title>
+</head>
+<body>
+
+   <header >
+      <!-- <div class="head-1 py-2 bg-dark d-none d-lg-block" >
+         <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+               <div class="d-flex gap-2 text-secondary">
+                  <a href="#">
+                     <i class="fa-solid fa-location-dot"></i>
+                     Find a Store
+                  </a>
+                  <span class="divider"></span>
+                  <a href="#">
+                     <i class="fa-regular fa-envelope"></i>
+                     Newsletter
+                  </a>
+               </div>
+
+               <div class="lngs-cry d-flex gap-2">
+                  <div class="btn-group">
+                     <button class="btn dropdown-toggle text-light rounded-0 fs-8" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                        Languages
+                     </button>
+                     <ul class="dropdown-menu dropdown-menu-dark rounded-0 fs-8" aria-labelledby="Languages">
+                        <li value="Arabic">
+                           <a class="dropdown-item" href="#">
+                              <img src="images/Flag_of_Egypt.svg.png" alt="EGP" >
+                              Arabic
+                           </a>
+                        </li>
+                        <li value="English"><a class="dropdown-item" href="#">
+                           <img src="images/1200px-Flag_of_the_United_States.svg.png" alt="Eng">
+                           English
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+
+                  <span class="divider"></span>
+
+                  <div class="btn-group">
+                     <button class="btn dropdown-toggle text-light rounded-0 fs-8" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                        Curancy
+                     </button>
+                     <ul class="dropdown-menu dropdown-menu-dark rounded-0 fs-8" aria-labelledby="Languages">
+                        <li value="Arabic">
+                           <a class="dropdown-item" href="#">
+                              <img src="images/Flag_of_Egypt.svg.png" alt="EGP" >
+                              EGP
+                           </a>
+                        </li>
+                        <li value="Arabic">
+                           <a class="dropdown-item" href="#">
+                              <img src="images/Flag_of_Saudi_Arabia_(1938–1973).svg.png" alt="SAR" >
+                              SAR
+                           </a>
+                        </li>
+                        <li value="English"><a class="dropdown-item" href="#">
+                           <img src="images/1200px-Flag_of_the_United_States.svg.png" alt="Eng">
+                           USD
+                           </a>
+                        </li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div> -->
+
+      <div class="position-relative">
+         <nav class="navbar navbar-expand-lg navbar-dark text-light position-absolute w-100 ">
+            <div class="container ">
+               <a class="navbar-brand" href="#"> <img src="images/logo_white-7.png" alt="" height="50px"></a>
+
+               <div class="collapse navbar-collapse order-4 order-lg-2 text-light" id="navbarScroll">
+                  <ul class="navbar-nav mx-auto my-2 my-lg-0 text-center gap-3 fs-5">
+                     <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                     </li>
+
+                     <li class="nav-item"> <a class="nav-link" href="#our-menu"> Menu</a> </li>
+
+                     <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                           Shop
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                           <li><a class="dropdown-item" href="#">Hot Coffee</a></li>
+                           <li><a class="dropdown-item" href="#">Hot Coffee</a></li>
+                           <li><a class="dropdown-item" href="#">Beans Coffee</a></li>
+                           <li><hr class="dropdown-divider"></li>
+                           <li><a class="dropdown-item" href="#">Dessert Dishes</a></li>
+                        </ul>
+                     </li>
+                     <li class="nav-item"> <a class="nav-link" href="#">Events</a> </li>
+                     <li class="nav-item"> <a class="nav-link" href="#our-blog">Blogs</a> </li>
+                     <li class="nav-item"> <a class="nav-link" href="#choose-us">About</a> </li>
+                  </ul>
+                  <div>
+                     <div class="user-dropdown pe-auto dropdown c-pointer text-center px-2">
+                        <div data-bs-toggle="dropdown" >
+                           <i class="fa-regular fa-user fa-lg"></i>
+                        </div>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                           <li><a class="dropdown-item" href="#">Sign In</a></li>
+                           <li><a class="dropdown-item" href="#">Register</a></li>
+                        </ul>
+                     </div>
+
+                  </div >
+                  <div class="favorite-cart position-relative mt-4 mt-lg-0 me-lg-3 d-block text-center px-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasFavorite" aria-controls="offcanvasFavorite">
+                     <i class="fa-regular fa-heart fa-lg"></i>
+                     <span class="cart-badge position-absolute top-0 translate-middle badge rounded-pill bg-info ms-2">0</span>
+                  </div>
+               </div>
+
+               <div class="d-flex gap-3 align-items-center order-lg-2">
+                  <button class="navbar-toggler order-5 " type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
+                     <span class="navbar-toggler-icon"></span>
+                  </button>
+
+                  <div class="shoppin-cart position-relative me-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart">
+                     <i class="fa fa-shopping-basket fa-lg"></i>
+                     <span class="cart-badge position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info ms-1">0</span>
+                  </div>
+
+               </div>
+            </div>
+         </nav>
+
+      </div>
+   </header>
+
+
+   <!-- section 01 main carousel -->
+   <main>
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+         <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+         </div>
+         <div class="carousel-inner ">
+            <div class="carousel-item active">
+               <div class="d-flex align-items-center h-100">
+                  <div class="carousel-content d-flex flex-column justify-content-center text-light w-75 mx-auto">
+                     <h5>First slide label</h5>
+                     <h2 class="fs-1 mt-3 mb-5"> Discover Amazing Coffee <br> House & Get Energy </h2>
+                     <p> There are many variations of passages available but the majority have suffered <br>
+                        alteration in some form by injected humour or randomised words.
+                     </p>
+                     <div>
+                        <a href="#choose-us" class="btn btn-outline-secondary btn-lg shadow">Read More</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="d-flex align-items-center h-100">
+                  <div class="carousel-content d-flex flex-column justify-content-center text-light w-75 mx-auto">
+                     <h5>First slide label</h5>
+                     <h2 class="fs-1 mt-3 mb-5"> Discover Amazing Coffee <br> House & Get Energy </h2>
+                     <p> There are many variations of passages available but the majority have suffered <br>
+                        alteration in some form by injected humour or randomised words.
+                     </p>
+                     <div>
+                        <a href="#choose-us" class="btn btn-outline-secondary btn-lg shadow">Read More</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="d-flex align-items-center h-100">
+                  <div class="carousel-content d-flex flex-column justify-content-center text-light w-75 mx-auto">
+                     <h5>First slide label</h5>
+                     <h2 class="fs-1 mt-3 mb-5"> Discover Amazing Coffee <br> House & Get Energy </h2>
+                     <p> There are many variations of passages available but the majority have suffered <br>
+                        alteration in some form by injected humour or randomised words.
+                     </p>
+                     <div>
+                        <a href="#choose-us" class="btn btn-outline-secondary btn-lg shadow">Read More</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="carousel-item">
+               <div class="d-flex align-items-center h-100">
+                  <div class="carousel-content d-flex flex-column justify-content-center text-light w-75 mx-auto">
+                     <h5>First slide label</h5>
+                     <h2 class="fs-1 mt-3 mb-5"> Discover Amazing Coffee <br> House & Get Energy </h2>
+                     <p> There are many variations of passages available but the majority have suffered <br>
+                        alteration in some form by injected humour or randomised words.
+                     </p>
+                     <div>
+                        <a href="#choose-us" class="btn btn-outline-secondary btn-lg shadow">Read More</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+         </button>
+         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+         </button>
+         </div>
+   </main>
+
+
+   <!--  shopping cart offcanvas -------------------------- -->
+   <div class="offcanvas-cart offcanvas offcanvas-end " data-bs-scroll="true" tabindex="-1" id="offcanvasCart" aria-labelledby="offcanvasCart">
+      <div class="cart-header offcanvas-header shadow">
+         <a href="#" class="offcanvas-title text-primary fw-bold" >Shopping Cart</a>
+         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div id="addedProduct" class="offcanvas-body">
+         <!-- product-item img, info and price will added here -->
+
+         <div class="product-item d-flex align-items-center gap-2 position-relative mb-4">
+            <div class="remove-item position-absolute top-0 end-0">
+               <button class="btn btn-sm btn-primary text-white" type="button" title="Remove">
+                  <i class="fa-solid fa-trash-can"></i>
+               </button>
+            </div>
+
+            <div>
+               <img src="images/hotCoffee01.jpg" alt="Americano Coffee" width="90">
+            </div>
+            <div class="flex-grow-1">
+               <h5>Americano Coffee</h5>
+               <span>Fresh Milk With Vanilla Flavored</span>
+               <div class="d-flex justify-content-between">
+                  <h5 class="d-flex w-100">
+                     <span class="old-price text-decoration-line-through">$120</span>
+                     <span class="new-price flex-grow-1 text-center text-info "> $100 </span>
+                  </h5>
+
+                  <div>
+                     <div class="btn-group mb-0">
+                        <button class="btn btn-sm btn-info text-white h-50" type="button" title="Increase 1">
+                           <i class="fa-solid fa-minus "></i>
+                        </button>
+                        <h4 class="px-3">1</h4>
+                        <button class="btn btn-sm btn-info text-white h-50" type="button" title="Decrease 1">
+                           <i class="fa-solid fa-plus"></i>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+               <hr class="m-1">
+            </div>
+
+         </div>
+         <div class="product-item d-flex align-items-center gap-2 position-relative mb-4">
+            <div class="remove-item position-absolute top-0 end-0">
+               <button class="btn btn-sm btn-primary text-white" type="button" title="Remove">
+                  <i class="fa-solid fa-trash-can"></i>
+               </button>
+            </div>
+
+            <div>
+               <img src="images/hotCoffee01.jpg" alt="Americano Coffee" width="90">
+            </div>
+            <div class="flex-grow-1">
+               <h5>Americano Coffee</h5>
+               <span>Fresh Milk With Vanilla Flavored</span>
+               <div class="d-flex justify-content-between">
+                  <h5 class="d-flex w-100">
+                     <span class="old-price text-decoration-line-through">$120</span>
+                     <span class="new-price flex-grow-1 text-center text-info "> $100 </span>
+                  </h5>
+
+                  <div>
+                     <div class="btn-group mb-0">
+                        <button class="btn btn-sm btn-info text-white h-50" type="button" title="Increase 1">
+                           <i class="fa-solid fa-minus "></i>
+                        </button>
+                        <h4 class="px-3">1</h4>
+                        <button class="btn btn-sm btn-info text-white h-50" type="button" title="Decrease 1">
+                           <i class="fa-solid fa-plus"></i>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+               <hr class="m-1">
+            </div>
+
+         </div>
+
+      </div>
+      <div class="cart-footer offcanvas-header shadow-lg flex-column">
+         <div class="d-flex justify-content-between w-100">
+            <h5 class="sub-total">Sub Total: </h5>
+            <h4 class="item-count">Item: 0</h4>
+            <h4 class="total-money text-info text-end">$0</h4>
+         </div>
+         <div class="d-flex justify-content-between w-100">
+            <button type="button" class="clear btn btn-primary">Clear</button>
+            <button type="button" class="checkout btn btn-info text-white">checkout</button>
+         </div>
+
+      </div>
+   </div>
+
+
+   <!--  Favorite cat offcanvas -------------------------- -->
+   <div class="offcanvas-favorite offcanvas offcanvas-end " data-bs-scroll="true" tabindex="-1" id="offcanvasFavorite" aria-labelledby="offcanvasFavorite">
+      <div class="favorite-header offcanvas-header shadow">
+         <a href="#" class="offcanvas-title text-primary fw-bold" >Favorite List</a>
+         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div id="addedProduct" class="offcanvas-body">
+         <!-- product-item img, info and price will added here -->
+
+         <div class="product-item d-flex align-items-center gap-2 position-relative mb-4">
+            <div class="remove-item position-absolute top-0 end-0">
+               <button class="btn btn-sm btn-primary text-white" type="button" title="Remove">
+                  <i class="fa-solid fa-trash-can"></i>
+               </button>
+            </div>
+
+            <div>
+               <img src="images/hotCoffee01.jpg" alt="Americano Coffee" width="90">
+            </div>
+            <div class="flex-grow-1">
+               <h5>Americano Coffee</h5>
+               <span>Fresh Milk With Vanilla Flavored</span>
+               <div class="d-flex justify-content-between">
+                  <h5 class="d-flex w-100">
+                     <span class="old-price text-decoration-line-through">$120</span>
+                     <span class="new-price flex-grow-1 text-center text-info "> $100 </span>
+                  </h5>
+
+                  <div>
+                     <div class="">
+                        <button class="btn btn-info text-white" type="button" title="Add To Cart">
+                           <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                        </button>
+                     </div>
+                  </div>
+               </div>
+               <hr class="m-1">
+            </div>
+
+         </div>
+
+      </div>
+      <div class="favorite-footer offcanvas-header shadow-lg d-flex justify-content-between flex-wrap">
+         <!-- <h5 class="total-money">Sub Total: </h5> -->
+         <h5>Item: </h5>
+         <h4 class="item-count">0</h4>
+         <button type="button" class="clear btn btn-primary">Clear</button>
+      </div>
+   </div>
+
+
+   <!--  arrow-up button -------------------------- -->
+   <div class="arrow-up">
+      <a href="#" title="Back to up">
+         <i class="fa-solid fa-arrow-up"></i>
+      </a>
+   </div>
+
+
+   <!-- section 0 RESERVE YOUR TABLE HERE -->
+   <section class="reserve">
+      <div class="container my-5 py-5">
+
+         <div class="row">
+            <div class="reserve-col col-12 col-lg-4 p-0 d-flex position-relative">
+                  <div class="reserve-content p-5">
+                     <h3> RESERVE YOUR TABLE</h3>
+                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio unde accusantium repellat, eligendi nemo optio dignissimos, .</p>
+
+                     <div>
+                        <div class="input-group mb-3 position-relative">
+                           <select class="form-select" id="inputGroupSelect02" title="Choose the Number of Person">
+                              <option value="1">1 Person</option>
+                              <option value="2">2 People</option>
+                              <option value="3">3 People</option>
+                              <option value="4">4 People</option>
+                              <option value="5">5 People</option>
+                              <option value="6">6 People</option>
+                              <option value="7">7 People</option>
+                              <option value="8">8 People</option>
+                              <option value="9">9 People</option>
+                              <option value="10">10 People</option>
+                           </select>
+                           <span class="input-group-text p-3" for="inputGroupSelect02">
+                              <i class="fa fa-users" aria-hidden="true"></i>
+                           </span>
+                        </div>
+                        <div class="input-group mb-3">
+                           <input type="date" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                           <span class="input-group-text p-3" id="basic-addon2">
+                              <i class="fa-solid fa-calendar-days"></i>
+                           </span>
+                        </div>
+                        <div class="input-group mb-3">
+                           <input type="time" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon3">
+                           <span class="input-group-text p-3" id="basic-addon3">
+                              <i class="fa-regular fa-clock"></i>
+                           </span>
+                        </div>
+
+                        <button class="btn btn-outline-info btn-lg" type="submit"> Book a Table</button>
+                     </div>
+                  </div>
+               </div>
+
+            <div class="col-12 col-lg-8 p-0">
+               <div class="reserve-img">
+                  <!-- <img src="images/coffe_back.png" alt="best coffee" width="100%"> -->
+
+               </div>
+            </div>
+         </div>
+      </div>
+
+   </section>
+
+
+   <!-- section  Why Choose Us -->
+   <section class="choose-us" id="choose-us">
+      <div class="container py-5 my-5">
+         <div class="section-title text-center text-primary mb-5">
+            <h2>Why Choose Us</h2>
+            <img src="images/title-separator.png" alt="Why Choose Us">
+         </div>
+         <div class="row  row-cols-1 row-cols-lg-2 g-4 align-items-strech">
+            <div class="col h-100">
+               <div class="choose-us-img card h-100 border-0 rounded-0">
+                  <!-- <img src="images/coffee-1-e1625191370210.jpg" alt="coffee-1"  height="100%"> -->
+               </div>
+            </div>
+
+            <div class="col  card h-100 border-0 rounded-0">
+               <div class="">
+                  <div>
+                     <h2>Coffero Most Out Of Your Favorite & Tasty Coffee House</h2>
+                     <p>There are many variations of passages of orem psum available but the majority have suffered alteration in some form by injected humour or randomised words which don't look even slightly believable.</p>
+                  </div>
+
+                  <div class="accordion mt-4" id="accordionExample">
+                     <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                           <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                              Awesome Aroma
+                           </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                           <div class="accordion-body d-flex gap-3">
+                              <img width="100px" src="images/coffee-mug.svg" alt="coffee-mug">
+                              <div>
+                                 <h4 class="text-info">Awesome Aroma</h4>
+                                 <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some injected.</p>
+                                 <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some injected.</p>
+                                 <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some injected.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                              Pure Grades
+                           </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                           <div class="accordion-body d-flex gap-3">
+                              <img width="100px" src="images/coffee-beans-2.svg" alt="coffee-mug">
+                              <div>
+                                 <h4 class="text-info">Pure Grades</h4>
+                                 <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some injected.</p>
+                                 <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some injected.</p>
+                                 <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some injected.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                           Healthy Coffee
+                           </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                           <div class="accordion-body d-flex gap-3">
+                              <img width="100px" src="images/coffee-beans-3.svg" alt="coffee-mug">
+                              <div>
+                                 <h4 class="text-info">Healthy Coffee</h4>
+                                 <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some injected.</p>
+                                 <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some injected.</p>
+                                 <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some injected.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+
+                     <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                           Healthy Coffee
+                           </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                           <div class="accordion-body d-flex gap-3">
+                              <img width="100px" src="images/coffee-beans-3.svg" alt="coffee-mug">
+                              <div>
+                                 <h4 class="text-info">Healthy Coffee</h4>
+                                 <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some injected.</p>
+                                 <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some injected.</p>
+                                 <p>There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration in some injected.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- section  DISCOUNT -->
+   <section class="discount bg-light">
+      <div class="container my-5 py-5">
+
+         <div class="row row-cols-1 row-cols-lg-2">
+            <div class="col">
+               <div class="discount-item position-relative mb-4">
+                  <div class="">
+                     <img src="images/cms-banner-01.jpg" alt="discount" width="100%">
+                  </div>
+                  <div class="discount-info position-absolute top-0 left-0 p-4 d-flex flex-column justify-content-center h-100">
+                     <small>Special Offer Available</small>
+                     <h3 class="position-relative mb-5">FRESH COFFEE MUG</h3>
+                     <h5>34% DISCOUNT</h5>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="discount-item position-relative mb-4">
+                  <div class="">
+                     <img src="images/cms-banner-02.jpg" alt="discount" width="100%">
+                  </div>
+                  <div class="discount-info position-absolute top-0 left-0 p-4 d-flex flex-column justify-content-center h-100">
+                     <small>Special Offer Available</small>
+                     <h3 class="position-relative mb-5">COFFEE BEANS</h3>
+                     <h5>27% DISCOUNT</h5>
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </section>
+
+
+   <!-- section Our Shop -->
+   <section class="our-shop my-5 py-5" id="our-shop">
+      <div class="container">
+         <div class="section-title text-center text-primary mb-5">
+            <h2>Our Shop</h2>
+            <img src="images/title-separator.png" alt="Our Shop">
+         </div>
+
+         <div class="row">
+            <ul class="product-types col-12 col-lg-8 d-flex justify-content-lg-evenly gap-3 mx-auto mb-5 overflow-auto">
+               <li class="active">all</li>
+               <li>Hot Coffee</li>
+               <li>Cold Coffee</li>
+               <li>Beans Coffee</li>
+               <li>Dessert Dishes</li>
+            </ul>
+         </div>
+
+         <div class="products row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+
+            <div class="col">
+               <div class="card h-100" product-type="Hot Coffee">
+                  <a href="#" class="overflow-hidden position-relative rounded-top">
+                     <img src="images/hotCoffee01.jpg" class="card-img-top w-100" alt="hotCoffee">
+                     <span class="sale-badge shadow-lg">
+                        Sale
+                     </span>
+                  </a>
+                  <div class="position-relative">
+                     <div class="card-icons d-flex gap-3 justify-content-center w-100 position-absolute mx-auto">
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Shopping Cart">
+                           <i class="fa fa-shopping-basket" ></i>
+                        </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Wash List">
+                           <i class="fa fa-heart" ></i> </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Show Details">
+                           <i class="fa fa-eye" ></i> </p>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Special Raw Coffee</h5>
+                     <p class="card-text">Fresh milk with vanilla flavored</p>
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between">
+                        <span class="text-decoration-line-through">$120.00</span>
+                        <span class="text-info"> $100.00 </span>
+                     </h4>
+
+                  </div>
+
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100" product-type="Hot Coffee">
+                  <a href="#" class="overflow-hidden position-relative rounded-top">
+                     <img src="images/hotCoffee01.jpg" class="card-img-top w-100" alt="hotCoffee">
+                     <span class="sale-badge shadow-lg">
+                        Sale
+                     </span>
+                  </a>
+                  <div class="position-relative">
+                     <div class="card-icons d-flex gap-3 justify-content-center w-100 position-absolute mx-auto">
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Shopping Cart">
+                           <i class="fa fa-shopping-basket" ></i>
+                        </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Wash List">
+                           <i class="fa fa-heart" ></i> </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Show Details">
+                           <i class="fa fa-eye" ></i> </p>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Special Raw Coffee</h5>
+                     <p class="card-text">Fresh milk with vanilla flavored</p>
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between">
+                        <span class="old-price text-decoration-line-through">$120.00</span>
+                        <span class="new-price text-danger"> $100.00 </span>
+                     </h4>
+
+                  </div>
+
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100" product-type="Hot Coffee">
+                  <a href="#" class="overflow-hidden position-relative rounded-top">
+                     <img src="images/hotCoffee01.jpg" class="card-img-top w-100" alt="hotCoffee">
+                     <span class="sale-badge shadow-lg">
+                        Sale
+                     </span>
+                  </a>
+                  <div class="position-relative">
+                     <div class="card-icons d-flex gap-3 justify-content-center w-100 position-absolute mx-auto">
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Shopping Cart">
+                           <i class="fa fa-shopping-basket" ></i>
+                        </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Wash List">
+                           <i class="fa fa-heart" ></i> </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Show Details">
+                           <i class="fa fa-eye" ></i> </p>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Special Raw Coffee</h5>
+                     <p class="card-text">Fresh milk with vanilla flavored</p>
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between"> <span class="text-decoration-line-through">$120.00</span>  <span class="text-danger"> $100.00 </span></h4>
+
+                  </div>
+
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100" product-type="Cold Coffee">
+                  <a href="#" class="overflow-hidden position-relative rounded-top">
+                     <img src="images/hotCoffee01.jpg" class="card-img-top w-100" alt="hotCoffee">
+                     <span class="sale-badge shadow-lg">
+                        Sale
+                     </span>
+                  </a>
+                  <div class="position-relative">
+                     <div class="card-icons d-flex gap-3 justify-content-center w-100 position-absolute mx-auto">
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Shopping Cart">
+                           <i class="fa fa-shopping-basket" ></i>
+                        </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Wash List">
+                           <i class="fa fa-heart" ></i> </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Show Details">
+                           <i class="fa fa-eye" ></i> </p>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Special Raw Coffee</h5>
+                     <p class="card-text">Fresh milk with vanilla flavored</p>
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between"> <span class="text-decoration-line-through">$120.00</span>  <span class="text-danger"> $100.00 </span></h4>
+
+                  </div>
+
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100" product-type="Cold Coffee">
+                  <a href="#" class="overflow-hidden position-relative rounded-top">
+                     <img src="images/hotCoffee01.jpg" class="card-img-top w-100" alt="hotCoffee">
+                     <span class="sale-badge shadow-lg">
+                        Sale
+                     </span>
+                  </a>
+                  <div class="position-relative">
+                     <div class="card-icons d-flex gap-3 justify-content-center w-100 position-absolute mx-auto">
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Shopping Cart">
+                           <i class="fa fa-shopping-basket" ></i>
+                        </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Wash List">
+                           <i class="fa fa-heart" ></i> </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Show Details">
+                           <i class="fa fa-eye" ></i> </p>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Special Raw Coffee</h5>
+                     <p class="card-text">Fresh milk with vanilla flavored</p>
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between"> <span class="text-decoration-line-through">$120.00</span>  <span class="text-danger"> $100.00 </span></h4>
+
+                  </div>
+
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100" product-type="Beans Coffee">
+                  <a href="#" class="overflow-hidden position-relative rounded-top">
+                     <img src="images/hotCoffee01.jpg" class="card-img-top w-100" alt="hotCoffee">
+                     <span class="sale-badge shadow-lg">
+                        Sale
+                     </span>
+                  </a>
+                  <div class="position-relative">
+                     <div class="card-icons d-flex gap-3 justify-content-center w-100 position-absolute mx-auto">
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Shopping Cart">
+                           <i class="fa fa-shopping-basket" ></i>
+                        </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Wash List">
+                           <i class="fa fa-heart" ></i> </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Show Details">
+                           <i class="fa fa-eye" ></i> </p>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Special Raw Coffee</h5>
+                     <p class="card-text">Fresh milk with vanilla flavored</p>
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between"> <span class="text-decoration-line-through">$120.00</span>  <span class="text-danger"> $100.00 </span></h4>
+
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100" product-type="Dessert Dishes">
+                  <a href="#" class="overflow-hidden position-relative rounded-top">
+                     <img src="images/hotCoffee01.jpg" class="card-img-top w-100" alt="hotCoffee">
+                     <span class="sale-badge shadow-lg">
+                        Sale
+                     </span>
+                  </a>
+                  <div class="position-relative">
+                     <div class="card-icons d-flex gap-3 justify-content-center w-100 position-absolute mx-auto">
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Shopping Cart">
+                           <i class="fa fa-shopping-basket" ></i>
+                        </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Wash List">
+                           <i class="fa fa-heart" ></i> </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Show Details">
+                           <i class="fa fa-eye" ></i> </p>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Special Raw Coffee</h5>
+                     <p class="card-text">Fresh milk with vanilla flavored</p>
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between"> <span class="text-decoration-line-through">$120.00</span>  <span class="text-danger"> $100.00 </span></h4>
+
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="card h-100" product-type="Dessert Dishes">
+                  <a href="#" class="overflow-hidden position-relative rounded-top">
+                     <img src="images/hotCoffee01.jpg" class="card-img-top w-100" alt="hotCoffee">
+                     <span class="sale-badge shadow-lg">
+                        Sale
+                     </span>
+                  </a>
+                  <div class="position-relative">
+                     <div class="card-icons d-flex gap-3 justify-content-center w-100 position-absolute mx-auto">
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Shopping Cart">
+                           <i class="fa fa-shopping-basket" ></i>
+                        </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Add to Wash List">
+                           <i class="fa fa-heart" ></i> </p>
+                        <p class="shadow" data-bs-toggle="tooltip" title="Show Details">
+                           <i class="fa fa-eye" ></i> </p>
+                     </div>
+                  </div>
+                  <div class="card-body">
+                     <h5 class="card-title">Special Raw Coffee</h5>
+                     <p class="card-text">Fresh milk with vanilla flavored</p>
+                     <p class="text-warning">
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa fa-star"></i>
+                        <i class="fa-solid fa-star-half-stroke"></i>
+                        <i class="fa-regular fa-star"></i>
+                     </p>
+                     <h4 class="d-flex justify-content-between"> <span class="text-decoration-line-through">$120.00</span>  <span class="text-danger"> $100.00 </span></h4>
+
+                  </div>
+               </div>
+            </div>
+
+         </div>
+      </div>
+   </section>
+
+   <!-- section statistics -->
+   <section class="statistics my-5 py-5 text-light">
+      <div class="container">
+         <div class="row  row-cols-2 row-cols-md-4 g-4">
+            <div class="col">
+               <div class="statistic-item d-flex flex-column justify-content-center align-items-center h-100 mt-3 ms-3">
+                  <div class="statistic-icon">
+                     <img src="images/statistics total branches.svg" alt="total branches" width="60">
+                  </div>
+                  <h2 class="mt-4">34</h2>
+                  <h4>+ total branches</h4>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="statistic-item d-flex flex-column justify-content-center align-items-center h-100 mt-3 ms-3">
+                  <div class="statistic-icon">
+                     <img src="images/statistics happy customer.svg" alt="total branches" width="60">
+                  </div>
+                  <h2 class="mt-4">1500</h2>
+                  <h4>+ happy customer</h4>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="statistic-item d-flex flex-column justify-content-center align-items-center h-100 mt-3 ms-3">
+                  <div class="statistic-icon">
+                     <img src="images/statistics chef.svg" alt="total branches" width="60">
+                  </div>
+                  <h2 class="mt-4">120</h2>
+                  <h4>+ Professional Chefs</h4>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="statistic-item d-flex flex-column justify-content-center align-items-center h-100 mt-3 ms-3">
+                  <div class="statistic-icon">
+                     <img src="images/statistics years of experience.svg" alt="total branches" width="60">
+                  </div>
+                  <h2 class="mt-4">55</h2>
+                  <h4>+ years of experience</h4>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+   <!-- section BEST COFFEE IN THE CITY -->
+   <section class="best-coffee">
+      <div class="container my-5 py-5">
+         <div class="row">
+            <div class="col-12 col-lg-5 p-0">
+               <div class="best-info d-flex flex-column justify-content-evenly p-4">
+                  <h3 class="section-title"> TRY THE BEST COFFEE IN THE CITY </h3>
+                  <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an at dictum lacu pericula uni euripidis.</p>
+                  <p>Alienum phaedrum torquatos nec eu, vis detraxit periculis ex, nihil expetendis in mei. Mei an at dictum lacu pericula uni euripidis.</p>
+                  <a href="#">Read More  </a>
+               </div>
+            </div>
+
+            <div class="col-12 col-lg-7 p-0">
+               <div class="best-content h-100 position-relative ">
+                  <div class="best-coffee-imgs  position-relative h-100 overflow-hidden">
+                     <img src="images/main-home-project-pres-3.jpg" alt="best coffee">
+                     <img src="images/main-home-project-pres-1.jpg" alt="best coffee">
+                     <img src="images/main-home-project-pres-3.jpg" alt="best coffee">
+                  </div>
+                  <ul class="best-coffee-dots">
+                     <li class="dot active"></li>
+                     <li class="dot"></li>
+                     <li class="dot"></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+   <!-- section Our Menu -->
+   <section class="our-menu" id="our-menu">
+      <div class="container my-5 py-5">
+         <h2 class="section-title text-center mb-2 text-light"> Our Menu </h2>
+         <h5 class="text-center mb-5 text-info">Let's Check Our Menu</h5>
+
+         <div class="row row-cols-1 row-cols-lg-2 g-3">
+            <div class="col">
+               <div class="menu-item card flex-row gap-3 p-3 align-items-center shadow">
+                  <div>
+                     <img src="images/h2-custom-icon-1.png" alt="Americano Coffee">
+                  </div>
+                  <div class="menu-info  flex-grow-1">
+                     <h4>Americano Coffee</h4>
+                     <p class="m-0">Fresh milk with vanilla flavored</p>
+                  </div>
+                  <div class="menu-price">
+                     <h4 class="m-0">$ <span>50.25</span></h4>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="menu-item card flex-row gap-3 p-3 align-items-center shadow">
+                  <div>
+                     <img src="images/h2-custom-icon-1.png" alt="Americano Coffee">
+                  </div>
+                  <div class="menu-info  flex-grow-1">
+                     <h4>Americano Coffee</h4>
+                     <p class="m-0">Fresh milk with vanilla flavored</p>
+                  </div>
+                  <div class="menu-price">
+                     <h4 class="m-0">$ <span>50.25</span></h4>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="menu-item card flex-row gap-3 p-3 align-items-center shadow">
+                  <div>
+                     <img src="images/h2-custom-icon-1.png" alt="Americano Coffee">
+                  </div>
+                  <div class="menu-info  flex-grow-1">
+                     <h4>Americano Coffee</h4>
+                     <p class="m-0">Fresh milk with vanilla flavored</p>
+                  </div>
+                  <div class="menu-price">
+                     <h4 class="m-0">$ <span>50.25</span></h4>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="menu-item card flex-row gap-3 p-3 align-items-center shadow">
+                  <div>
+                     <img src="images/h2-custom-icon-1.png" alt="Americano Coffee">
+                  </div>
+                  <div class="menu-info  flex-grow-1">
+                     <h4>Americano Coffee</h4>
+                     <p class="m-0">Fresh milk with vanilla flavored</p>
+                  </div>
+                  <div class="menu-price">
+                     <h4 class="m-0">$ <span>50.25</span></h4>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+   <!-- section What Client Say's -->
+   <section class="reviews">
+      <div class="container my-5 py-5">
+         <div class="section-title text-center text-primary mb-5">
+            <h2>What Client Say's</h2>
+            <img src="images/title-separator.png" alt="OUR LATEST BLOG">
+         </div>
+
+         <div class="row row-cols-1 row-cols-lg-3 gap-3 flex-nowrap overflow-auto">
+            <div class="col">
+               <article class="review-item mb-3">
+                  <div class="customer d-flex gap-3">
+                     <div class="customer-img rounded-circle overflow-hidden">
+                        <img class=" rounded-circle" src="images/customer 01.jpg" alt="Parker Jimens" width="100%">
+                     </div>
+                     <div>
+                        <h4>Parker Jimens</h4>
+                        <p class="m-0">Customer</p>
+                        <p class="review-stars text-warning">
+                           <i class="fa-solid fa-star"></i>
+                           <i class="fa-solid fa-star"></i>
+                           <i class="fa-solid fa-star"></i>
+                           <i class="fa-solid fa-star-half-stroke"></i>
+                           <i class="fa-regular fa-star"></i>
+                        </p>
+                     </div>
+                  </div>
+
+                  <div class="review-content shadow">
+                     <blockquote class="mb-0 text-justify">
+                        <i class="fa-solid fa-quote-left"></i>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi nostrum cumque repellat quisquam? Voluptatum saepe iure voluptate neque dolor dolores corrupti aut modi molestias, aperiam reiciendis eveniet delectus mollitia! Ipsum.
+                        <i class="fa-solid fa-quote-right"></i>
+                     </blockquote>
+                  </div>
+               </article>
+            </div>
+
+            <div class="col">
+               <article class="review-item">
+                  <div class="customer d-flex gap-3">
+                     <div class="customer-img rounded-circle overflow-hidden">
+                        <img class=" rounded-circle" src="images/customer 01.jpg" alt="Parker Jimens" width="100%">
+                     </div>
+                     <div>
+                        <h4>Parker Jimens</h4>
+                        <p class="m-0">Customer</p>
+                        <p class="review-stars text-warning">
+                           <i class="fa-solid fa-star"></i>
+                           <i class="fa-solid fa-star"></i>
+                           <i class="fa-solid fa-star"></i>
+                           <i class="fa-solid fa-star-half-stroke"></i>
+                           <i class="fa-regular fa-star"></i>
+                        </p>
+                     </div>
+                  </div>
+
+                  <div class="review-content shadow">
+                     <blockquote class="mb-0 text-justify">
+                        <i class="fa-solid fa-quote-left"></i>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi nostrum cumque repellat quisquam? Voluptatum saepe iure voluptate neque dolor dolores corrupti aut modi molestias, aperiam reiciendis eveniet delectus mollitia! Ipsum.
+                        <i class="fa-solid fa-quote-right"></i>
+                     </blockquote>
+                  </div>
+               </article>
+            </div>
+
+            <div class="col">
+               <article class="review-item">
+                  <div class="customer d-flex gap-3">
+                     <div class="customer-img rounded-circle overflow-hidden">
+                        <img class=" rounded-circle" src="images/customer 01.jpg" alt="Parker Jimens" width="100%">
+                     </div>
+                     <div>
+                        <h4>Parker Jimens</h4>
+                        <p class="m-0">Customer</p>
+                        <p class="review-stars text-warning">
+                           <i class="fa-solid fa-star"></i>
+                           <i class="fa-solid fa-star"></i>
+                           <i class="fa-solid fa-star"></i>
+                           <i class="fa-solid fa-star-half-stroke"></i>
+                           <i class="fa-regular fa-star"></i>
+                        </p>
+                     </div>
+                  </div>
+
+                  <div class="review-content shadow">
+                     <blockquote class="mb-0 text-justify">
+                        <i class="fa-solid fa-quote-left"></i>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi nostrum cumque repellat quisquam? Voluptatum saepe iure voluptate neque dolor dolores corrupti aut modi molestias, aperiam reiciendis eveniet delectus mollitia! Ipsum.
+                        <i class="fa-solid fa-quote-right"></i>
+                     </blockquote>
+                  </div>
+               </article>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+   <!-- section Our Team -->
+   <section class="our-team">
+      <div class="container my-5 py-5">
+         <div class="section-title text-center text-primary mb-5">
+            <h2>Our Team</h2>
+            <img src="images/title-separator.png" alt="Our Team">
+         </div>
+
+         <div class="row row-cols-1 row-cols-lg-3">
+            <div class="col">
+               <div class="team-member  position-relative mb-4">
+                  <ul class="member-contact">
+                     <li> <a href="#" title="facebook link" target="_blank"> <i class="fab fa-facebook-f"></i> </a> </li>
+                     <li> <a href="#" title="twitter link" target="_blank"> <i class="fab fa-twitter"></i> </a> </li>
+                     <li> <a href="#" title="instagram link" target="_blank"> <i class="fab fa-instagram"></i> </a> </li>
+                  </ul>
+                  <div>
+                     <img src="images/team-single-1-700x820.jpg" alt="Damien Russo" width="100%">
+                  </div>
+
+                  <div class="member-info">
+                     <h4>Damien Russo</h4>
+                     <p class="m-0">Assistent Chef</p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="team-member  position-relative mb-4">
+                  <ul class="member-contact">
+                     <li> <a href="#" title="facebook link" target="_blank"> <i class="fab fa-facebook-f"></i> </a> </li>
+                     <li> <a href="#" title="twitter link" target="_blank"> <i class="fab fa-twitter"></i> </a> </li>
+                     <li> <a href="#" title="instagram link" target="_blank"> <i class="fab fa-instagram"></i> </a> </li>
+                  </ul>
+                  <div>
+                     <img src="images/team_04-700x820.jpg" alt="Mario Jardin" width="100%">
+                  </div>
+
+                  <div class="member-info">
+                     <h4>Mario Jardin</h4>
+                     <p class="m-0">Assistent Chef</p>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col">
+               <div class="team-member  position-relative mb-4">
+                  <ul class="member-contact">
+                     <li> <a href="#" title="facebook link" target="_blank"> <i class="fab fa-facebook-f"></i> </a> </li>
+                     <li> <a href="#" title="twitter link" target="_blank"> <i class="fab fa-twitter"></i> </a> </li>
+                     <li> <a href="#" title="instagram link" target="_blank"> <i class="fab fa-instagram"></i> </a> </li>
+                  </ul>
+                  <div>
+                     <img src="images/team-single-2-1-700x820.jpg" alt="Benoît Montagne" width="100%">
+                  </div>
+
+                  <div class="member-info">
+                     <h4>Benoît Montagne</h4>
+                     <p class="m-0">Chef</p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+
+
+   <!-- section OUR LATEST BLOG -->
+   <section class="our-blog" id="our-blog">
+      <div class="container my-5 py-5">
+         <div class="section-title text-center text-primary mb-5">
+            <h2>OUR LATEST BLOG</h2>
+            <img src="images/title-separator.png" alt="OUR LATEST BLOG">
+         </div>
+
+         <div class="row row-cols-1 row-cols-lg-3">
+            <div class="col">
+               <a class="card border-0 h-100" href="#">
+                  <div class="overflow-hidden">
+                     <img src="images/Blog-1.png" class="card-img-top" alt="Blog 1">
+                  </div>
+                  <div class="card-body">
+                     <h4 class="card-title">History of coffee</h4>
+                     <p class="card-text py-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                  </div>
+                  <div class="blog-details d-flex justify-content-between align-items-center p-2 mb-4">
+                     <div class="d-flex gap-2">
+                        <h3 class="day">25</h3>
+                        <span>september <br> 2022 </span>
+                     </div>
+                     <div class="d-flex gap-2">
+                        <small> <i class="fa-regular fa-eye"></i> 1,965 </small>
+                        <small> <i class="fa-solid fa-comment-dots"></i> 394 </small>
+                     </div>
+                  </div>
+               </a>
+            </div>
+
+            <div class="col">
+               <a class="card border-0 h-100" href="#">
+                  <div class="overflow-hidden">
+                     <img src="images/blog2-770x570.jpg" class="card-img-top" alt="Blog 1">
+                  </div>
+                  <div class="card-body">
+                     <h4 class="card-title">History of coffee</h4>
+                     <p class="card-text py-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                  </div>
+                  <div class="blog-details d-flex justify-content-between align-items-center p-2 mb-4">
+                     <div class="d-flex gap-2">
+                        <h3 class="day">25</h3>
+                        <span>september <br> 2022 </span>
+                     </div>
+                     <div class="d-flex gap-2">
+                        <small> <i class="fa-regular fa-eye"></i> 1,965 </small>
+                        <small> <i class="fa-solid fa-comment-dots"></i> 394 </small>
+                     </div>
+                  </div>
+               </a>
+            </div>
+
+            <div class="col">
+               <a class="card border-0 h-100" href="#">
+                  <div class="overflow-hidden">
+                     <img src="images/blog3-770x570.jpg" class="card-img-top" alt="Blog 1">
+                  </div>
+                  <div class="card-body">
+                     <h4 class="card-title">History of coffee</h4>
+                     <p class="card-text py-3">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+
+                  </div>
+                  <div class="blog-details d-flex justify-content-between align-items-center p-2 mb-4">
+                     <div class="d-flex gap-2">
+                        <h3 class="day">25</h3>
+                        <span>september <br> 2022 </span>
+                     </div>
+                     <div class="d-flex gap-2">
+                        <small> <i class="fa-regular fa-eye"></i> 1,965 </small>
+                        <small> <i class="fa-solid fa-comment-dots"></i> 394 </small>
+                     </div>
+                  </div>
+               </a>
+            </div>
+         </div>
+
+         <div class="text-center">
+            <a href="#" class="btn btn-primary">Read More...</a>
+         </div>
+      </div>
+   </section>
+
+
+   <!-- section last   footer -->
+   <footer >
+      <div class="container">
+         <div class="footer-content row mt-5 py-5 text-light">
+
+            <div class="col-12 col-lg-3">
+               <div class="footer-col">
+                  <a href="#">
+                     <!-- <img src="images/logo-light.png" alt="logo" width="100%"> -->
+                     <img src="images/logo_white-7.png" alt="logo" width="100%" class="footer-logo">
+                  </a>
+                  <p class="text-muted">Pellentesque congue non augue vitae pellentesque. Morbi sollicitudin eleifend rhoncus. Mauris vel nisl a massa viverra sollicitudin semper a diam.</p>
+               </div>
+            </div>
+
+
+            <div class="col-12 col-lg-5 d-flex justify-content-center justify-content-lg-start ">
+               <div class="row row-cols-1 row-cols-md-2 g-4 flex-grow-1">
+                  <div class="col flex-grow-1 d-flex justify-content-center">
+                     <div class="footer-col ">
+                        <h4 class="mb-4">Useful</h4>
+                        <ul>
+                           <li><a href="#">Home</a></li>
+                           <li><a href="#">Our Menu</a></li>
+                           <li><a href="#">New Events</a></li>
+                           <li><a href="#">About Us</a></li>
+                           <li><a href="#">Sitemap</a></li>
+                        </ul>
+                     </div>
+                  </div>
+
+                  <div class="col  flex-grow-1 d-flex justify-content-center">
+                     <div class="footer-col">
+                        <h4 class="mb-4">Information</h4>
+                        <ul>
+                           <li><a href="#">Terms & Conditions</a></li>
+                           <li><a href="#">Privacy Policy</a></li>
+                           <li><a href="#">Shipping Information</a></li>
+                           <li><a href="#">Order Status</a></li>
+                           <li><a href="#">Cancellation</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  </div>
+               </div>
+
+            <div class="col-10 col-lg-4  mx-auto mx-lg-0">
+               <div class="footer-col">
+                  <h4 class="mb-4">Our Company</h4>
+                  <ul>
+                     <li><a href="#">Gift Voucher</a></li>
+                     <li>
+                        <div class="input-group my-2">
+                           <input type="text" class="form-control rounded-0" placeholder="Enter Your Email for our News">
+                           <button class="btn btn-outline-secondary rounded-0 px-4" type="button" title="Send">
+                              <i class="fa-regular fa-paper-plane"></i>
+                           </button>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="lngs-cry d-flex gap-2">
+                           <div class="btn-group">
+                              <button class="btn dropdown-toggle text-light rounded-0 fs-8" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                                 Languages
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-dark rounded-0 fs-8" aria-labelledby="Languages">
+                                 <li value="Arabic">
+                                    <a class="dropdown-item" href="#" target="_self">
+                                       <img src="images/Flag_of_Egypt.svg.png" alt="EGP" >
+                                       Arabic
+                                    </a>
+                                 </li>
+                                 <li value="English"><a class="dropdown-item" href="#" target="_self">
+                                    <img src="images/1200px-Flag_of_the_United_States.svg.png" alt="Eng">
+                                    English
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+
+                           <span class="divider"></span>
+
+                           <div class="btn-group">
+                              <button class="btn dropdown-toggle text-light rounded-0 fs-8" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+                                 Curancy
+                              </button>
+                              <ul class="dropdown-menu dropdown-menu-dark rounded-0 fs-8" aria-labelledby="Languages">
+                                 <li value="Arabic">
+                                    <a class="dropdown-item" href="#" target="_self">
+                                       <img src="images/Flag_of_Egypt.svg.png" alt="EGP" >
+                                       EGP
+                                    </a>
+                                 </li>
+                                 <li value="Arabic">
+                                    <a class="dropdown-item" href="#" target="_self">
+                                       <img src="images/Flag_of_Saudi_Arabia_(1938–1973).svg.png" alt="SAR" >
+                                       SAR
+                                    </a>
+                                 </li>
+                                 <li value="English">
+                                    <a class="dropdown-item" href="#" target="_self">
+                                    <img src="images/1200px-Flag_of_the_United_States.svg.png" alt="Eng">
+                                    USD
+                                    </a>
+                                 </li>
+                              </ul>
+                           </div>
+                        </div>
+                     </li>
+                     <li>
+                        <div class="social-icons ">
+                           <ul class="d-flex justify-content-between my-3">
+                              <li> <a href="#" title="facebook link" target="_blank"> <i class="fab fa-facebook-f"></i> </a> </li>
+                              <li> <a href="#" title="twitter link" target="_blank"> <i class="fab fa-twitter"></i> </a> </li>
+                              <li> <a href="#" title="linkedin link" target="_blank"> <i class="fab fa-linkedin-in"></i> </a> </li>
+                              <li> <a href="#" title="instagram link" target="_blank"> <i class="fab fa-instagram"></i> </a> </li>
+                              <li> <a href="#" title="github link" target="_blank"> <i class="fab fa-github"></i> </a> </li>
+                           </ul>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+
+
+         </div>
+         <!-- ------- copyright --------- -->
+         <hr class="text-muted">
+         <div class="d-flex justify-content-between align-items-center pb-3">
+            <small class="text-muted">&copy; Our Company</small>
+            <small class="text-muted">2017 All Rights Reserved</small>
+         </div>
+      </div>
+   </footer>
+
+
+
+
+
+
+
+   <script src="js/popper-2.11.6.minjs.js"></script>        <!--  popper script -->
+   <script src="js/bootstrap.bundle.min.js"></script>       <!--  bootstrap script -->
+   <script src="js/all.min.js"></script>                    <!--  fontawesome script -->
+   <!-- <script src="js/script.js"></script> -->                    <!--  my script -->
+</body>
+</html>
