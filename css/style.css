@@ -83,10 +83,11 @@ ul{
 }
 
 
+
+/* ------------------------------ header .navbar ------------------------------ */
 .navbar{
    z-index: 99;
 }
-
 
 @media  (min-width: 0px) and (max-width: 991px){
    header .navbar-collapse{
@@ -130,8 +131,6 @@ ul{
       width: 80%;
       box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
    }
-
-
 }
 
 
@@ -142,7 +141,6 @@ ul{
    overflow: hidden;
 }
 .carousel .carousel-item{
-
    background: var(--color-primary) url(../images/home-slider-01.jpg);
    background-position: center !important;
 }
@@ -188,8 +186,6 @@ ul{
 
 
 
-
-
 /* --------------------------- section 0 choose-us --------------------------- */
 .choose-us .choose-us-img{
    min-height: 650px;
@@ -206,7 +202,6 @@ ul{
 
 
 /* --------------------------- section 0 reserve --------------------------- */
-
 .reserve .reserve-col::before{
    content: "";
    position: absolute;
@@ -223,7 +218,6 @@ ul{
 }
 @media screen and (min-width: 992px){
    .reserve  .reserve-content{
-
       -webkit-transform: translate(130px);
       transform: translate(130px);
    }
@@ -242,7 +236,6 @@ ul{
    color: var(--bs-white);
    width: 50px;
    height: 50px;
-
 }
 
 /* ------------------- input calendar-picker */
@@ -261,14 +254,11 @@ ul{
 }
 
 
-
-
 /* --------------------------- section 0 discount --------------------------- */
 .discount .discount-item::before,
 .discount .discount-item::after{
    content: "";
    background-color: rgba(236, 228, 222, 0.301);
-
    position: absolute;
    top: 50%;
    left: 50%;
@@ -290,7 +280,6 @@ ul{
    visibility: visible;
    opacity: 1;
 }
-
 .discount .discount-item::after{
    width: 10%;
    height: 98%;
@@ -302,8 +291,6 @@ ul{
    visibility: visible;
    opacity: 1;
 }
-
-
 .discount .discount-item .discount-info h3::after{
    content: "";
    display: block;
@@ -468,19 +455,27 @@ ul{
 }
 
 
+/* change tooltip background and arrow border color */
+.tooltip-inner {
+   background-color: var(--color-primary);
+}
+.tooltip-arrow::before{
+   /* border-top-color: var(--color-primary) !important; */
+}
 
-@keyframes card-icons {
+
+
+/* @keyframes card-icons {
    0% { transform: translateY(0) ; -webkit-transform: translateY(0) ; -moz-transform: translateY(0) ; -ms-transform: translateY(0) ; -o-transform: translateY(0) ; }
    90% { transform: translateY(-55px) ; -webkit-transform: translateY(-55px) ; -moz-transform: translateY(-55px) ; -ms-transform: translateY(-55px) ; -o-transform: translateY(-55px) ; }
    100% { transform: translateY(-50px) ; -webkit-transform: translateY(-50px) ; -moz-transform: translateY(-50px) ; -ms-transform: translateY(-50px) ; -o-transform: translateY(-50px) ; }
-}
+} */
 
 
 /* --------------------------- section 0 Our Menu --------------------------- */
 .our-menu{
    background: var(--color-info) url(../images/home-1-parallax-2.jpg) fixed;
 }
-
 .menu-item{
    -webkit-transition: .3s ease-out;
    transition: .3s ease-out;
@@ -610,7 +605,6 @@ ul{
 
 
 
-
 /* ------------------------ section 0 Our Blogs --------------------------------------- */
 .our-blog .card{
    color: rgba(0, 0, 0, 0.74);
@@ -655,7 +649,6 @@ footer .footer-logo{
    padding: 5px 0;
    -webkit-transition:transform .3s ease-in;
    transition:transform .3s ease-in;
-
 }
 .footer-content .footer-col a:not([target]):hover{
    color: var(--color-info);
