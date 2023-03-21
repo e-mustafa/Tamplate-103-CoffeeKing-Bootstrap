@@ -1,0 +1,169 @@
+[
+  {
+    "id": 201,
+    "name": "Cappuccino",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 3.5,
+    "imgSrc": "images/products/cappuccino.jpg",
+    "decount": true,
+    "type": "Hot Coffee",
+    "price": 23.0,
+    "newPrice": 20.0
+  },
+  {
+    "id": 202,
+    "name": "Caramel Latte",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 4.5,
+    "imgSrc": "images/products/caramel-latte.jpg",
+    "decount": false,
+    "type": "Hot Coffee",
+    "price": 23.49
+  },
+  {
+    "id": 203,
+    "name": "Coffee with Milk",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 2,
+    "imgSrc": "images/products/Coffee with Milk.jpg",
+    "decount": true,
+    "type": "Hot Coffee",
+    "price": 23.1,
+    "newPrice": 19.49
+  },
+  {
+    "id": 204,
+    "name": "Irish Coffee",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 3.5,
+    "imgSrc": "images/products/Irish Coffee.jpg",
+    "decount": false,
+    "type": "Hot Coffee",
+    "price": 31.49
+  },
+  {
+    "id": 205,
+    "name": "COld Brew Coffee",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 5,
+    "imgSrc": "images/products/COld Brew Coffee.jpg",
+    "decount": true,
+    "type": "Cold Coffee",
+    "price": 45.49,
+    "newPrice": 42.99
+  },
+  {
+    "id": 206,
+    "name": "Iced Caramel Macchiato",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 3.5,
+    "imgSrc": "images/products/iced-caramel-macchiato.jpg",
+    "decount": true,
+    "type": "Cold Coffee",
+    "price": 33.0,
+    "newPrice": 29.49
+  },
+  {
+    "id": 208,
+    "name": "Ice Caramel Frappe",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 4,
+    "imgSrc": "images/products/ice-caramel-frappe.jpg",
+    "decount": false,
+    "type": "Cold Coffee",
+    "price": 23.49
+  },
+  {
+    "id": 209,
+    "name": "Hot Chocolate",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 5,
+    "imgSrc": "images/products/hot-chocolate.jpg",
+    "decount": false,
+    "type": "Hot Coffee",
+    "price": 27.49
+  },
+  {
+    "id": 210,
+    "name": "Lightly Roasted Classic-",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 3.5,
+    "imgSrc": "images/products/lightly-roasted-classic-.jpg",
+    "decount": true,
+    "type": "Beans Coffee",
+    "price": 38.0,
+    "newPrice": 23.49
+  },
+  {
+    "id": 211,
+    "name": "Dark Roast Blended",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 4.5,
+    "imgSrc": "images/products/dark-roast-blended.jpg",
+    "decount": true,
+    "type": "Beans Coffee",
+    "price": 39.49,
+    "newPrice": 32.49
+  },
+  {
+    "id": 212,
+    "name": "Premium Blended Aromated",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 5,
+    "imgSrc": "images/products/premium-blended-aromated.jpg",
+    "decount": false,
+    "type": "Beans Coffee",
+    "price": 40.99
+  },
+  {
+    "id": 213,
+    "name": "Chocolate Cake",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 5,
+    "imgSrc": "images/products/dessert - chocolate cake.png",
+    "decount": false,
+    "type": "Dessert",
+    "price": 33.99
+  },
+  {
+    "id": 214,
+    "name": "Chocolate Cupcake",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 4.5,
+    "imgSrc": "images/products/dessert - hot chocolate.png",
+    "decount": false,
+    "type": "Dessert",
+    "price": 30.99
+  },
+  {
+    "id": 215,
+    "name": "Croissant",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 2.5,
+    "imgSrc": "images/products/dessert - Croissant.png",
+    "decount": true,
+    "type": "Dessert",
+    "price": 28.99,
+    "newPrice": 25.49
+  },
+  {
+    "id": 216,
+    "name": "Cupcake",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 3.5,
+    "imgSrc": "images/products/dessert -cupcake.png",
+    "decount": false,
+    "type": "Dessert",
+    "price": 28.99
+  },
+  {
+    "id": 217,
+    "name": "Chocolate Blended",
+    "description": "Fresh Milk With Vanilla Flavored",
+    "evaluate": 4.5,
+    "imgSrc": "images/products/chocolate beans.jpg",
+    "decount": false,
+    "type": "Beans Coffee",
+    "price": 40.99
+  }
+]

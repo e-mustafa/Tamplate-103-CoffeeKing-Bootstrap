@@ -1,0 +1,115 @@
+[
+   {
+      "id": 501,
+      "name": "Cappuccino",
+      "description": "Fresh Milk With Vanilla Flavored",
+      "imgSrc": "images/products/cappuccino.jpg",
+      "new": true,
+      "type": "Hot Coffee",
+      "price": 23.0
+   },
+   {
+      "id": 502,
+      "name": "Caramel Latte",
+      "description": "Fresh Milk With Vanilla Flavored",
+      "imgSrc": "images/products/caramel-latte.jpg",
+      "new": false,
+      "type": "Hot Coffee",
+      "price": 23.49
+   },
+   {
+      "id": 503,
+      "name": "Coffee with Milk",
+      "description": "Fresh Milk With Vanilla Flavored",
+      "imgSrc": "images/products/Coffee with Milk.jpg",
+      "new": true,
+      "type": "Hot Coffee",
+      "price": 23.1,
+      "newPrice": 19.49
+   },
+   {
+      "id": 504,
+      "name": "Irish Coffee",
+      "description": "Fresh Milk With Vanilla Flavored",
+      "imgSrc": "images/products/Irish Coffee.jpg",
+      "new": false,
+      "type": "Hot Coffee",
+      "price": 31.49
+   },
+   {
+      "id": 505,
+      "name": "COld Brew Coffee",
+      "description": "Fresh Milk With Vanilla Flavored",
+      "imgSrc": "images/products/COld Brew Coffee.jpg",
+      "new": true,
+      "type": "Cold Coffee",
+      "price": 45.49,
+      "newPrice": 42.99
+   },
+   {
+      "id": 506,
+      "name": "Iced Caramel Macchiato",
+      "description": "Fresh Milk With Vanilla Flavored",
+      "imgSrc": "images/products/iced-caramel-macchiato.jpg",
+      "new": true,
+      "type": "Hot Coffee",
+      "price": 33.0,
+      "newPrice": 29.49
+   },
+   {
+      "id": 508,
+      "name": "Ice Caramel Frappe",
+      "description": "Fresh Milk With Vanilla Flavored",
+      "imgSrc": "images/products/ice-caramel-frappe.jpg",
+      "new": false,
+      "type": "Cold Coffee",
+      "price": 23.49
+   },
+   {
+      "id": 509,
+      "name": "Hot Chocolate",
+      "description": "Fresh Milk With Vanilla Flavored",
+      "imgSrc": "images/products/hot-chocolate.jpg",
+      "new": false,
+      "type": "Hot Coffee",
+      "price": 27.49
+   },
+   {
+      "id": 513,
+      "name": "Chocolate Cake",
+      "description": "Fresh Milk With Vanilla Flavored",
+      "imgSrc": "images/products/dessert - chocolate cake.png",
+      "new": false,
+      "type": "dessert",
+      "price": 33.99
+   },
+   {
+      "id": 514,
+      "name": "Chocolate Cupcake",
+      "description": "Fresh Milk With Vanilla Flavored",
+      "imgSrc": "images/products/dessert - hot chocolate.png",
+      "new": false,
+      "type": "dessert",
+      "price": 30.99
+   },
+   {
+      "id": 515,
+      "name": "Croissant",
+      "description": "Fresh Milk With Vanilla Flavored",
+      "imgSrc": "images/products/dessert - Croissant.png",
+      "new": true,
+      "price": 28.99,
+      "newPrice": 25.49
+   },
+   {
+      "id": 516,
+      "name": "Cupcake",
+      "description": "Fresh Milk With Vanilla Flavored",
+      "imgSrc": "images/products/dessert -cupcake.png",
+      "new": false,
+      "type": "dessert",
+      "price": 28.99
+   }
+]
+
+

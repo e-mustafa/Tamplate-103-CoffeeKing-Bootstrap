@@ -2029,11 +2029,11 @@ progress {
   height: 1.5em;
 }
 .form-control::-moz-placeholder {
-  color: #C9AD91;
+  color: var(--bs-gray-dark);
   opacity: 1;
 }
 .form-control::placeholder {
-  color: #C9AD91;
+  color: var(--bs-gray-dark);
   opacity: 1;
 }
 .form-control:disabled {
