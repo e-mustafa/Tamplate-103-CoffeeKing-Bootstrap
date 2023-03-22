@@ -120,7 +120,7 @@ ul {
   }
 }
 
-/* ANIMATED X */
+/* navbar-toggler ANIMATED X ----------------------------- */
 .navbar-toggler.x {
   border: none;
 }
@@ -200,12 +200,6 @@ ul {
 .arrow-up {
   position: sticky;
   z-index: 99;
-
-  /* transform: scale(0);
-   -webkit-transform: scale(0);
-   -moz-transform: scale(0);
-   -ms-transform: scale(0);
-   -o-transform: scale(0); */
 }
 .arrow-up a {
   display: block;
@@ -233,19 +227,19 @@ ul {
   top: 85%;
 }
 .arrow-up a.show {
-   -webkit-transform: scale(1);
-   -moz-transform: scale(1);
-   -ms-transform: scale(1);
-   -o-transform: scale(1);
-   transform: scale(1);
+  -webkit-transform: scale(1);
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  transform: scale(1);
 }
 
 .arrow-up a.hide {
-   -webkit-transform: scale(0) translateX(-200%);
-   -moz-transform: scale(0) translateX(-200%);
-   -ms-transform: scale(0) translateX(-200%);
-   -o-transform: scale(0) translateX(-200%);
-   transform: scale(0) translateX(-200%);
+  -webkit-transform: scale(0) translateX(-200%);
+  -moz-transform: scale(0) translateX(-200%);
+  -ms-transform: scale(0) translateX(-200%);
+  -o-transform: scale(0) translateX(-200%);
+  transform: scale(0) translateX(-200%);
 }
 
 /* --------------------------- section 01 reserve --------------------------- */
@@ -380,6 +374,8 @@ ul {
   margin-bottom: 10px;
   scroll-snap-align: start;
   scroll-snap-stop: always;
+  -webkit-user-select: none;
+  user-select: none;
 }
 .our-shop .product-types li:hover,
 .our-shop .product-types li.active {
@@ -598,14 +594,12 @@ ul {
 .reviews .reviews-container .col {
   scroll-snap-align: start;
 }
-
 .reviews .review-item .customer-img {
   border: 2px dashed var(--color-primary);
   padding: 4px;
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
-
 .reviews .review-item .review-content {
   margin-top: 30px;
   padding: 30px;
@@ -638,7 +632,6 @@ ul {
   outline: 2px dashed var(--color-primary);
   outline-offset: 2px;
 }
-
 .our-team .member-contact {
   display: flex;
   flex-flow: column;
