@@ -56,8 +56,8 @@ bestContent.addEventListener("mouseout", function () {
 // productsLink = "../json/productsData.json";
 // menuLink = "../json/menuData.json";
 
-productsLink =  "productsData.json" | "https://e-mustafa.github.io/Tamplate-103-CoffeeKing-Bootstrap/json/menuData.json";
-menuLink =  "menuData.json" | "https://e-mustafa.github.io/Tamplate-103-CoffeeKing-Bootstrap/json/menuData.json";
+productsLink =  "json/productsData.json" || "https://e-mustafa.github.io/Tamplate-103-CoffeeKing-Bootstrap/json/menuData.json";
+menuLink =  "json/menuData.json" || "https://e-mustafa.github.io/Tamplate-103-CoffeeKing-Bootstrap/json/menuData.json";
 
 // get data function -------------------------------------
 function getData(link) {
