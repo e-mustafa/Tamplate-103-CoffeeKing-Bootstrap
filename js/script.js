@@ -53,8 +53,12 @@ bestContent.addEventListener("mouseout", function () {
 });
 // -------------------------------------- End best coffee section slider --------------------------------------
 
-productsLink = "../json/productsData.json";
-menuLink = "../json/menuData.json";
+// productsLink = "../json/productsData.json";
+// menuLink = "../json/menuData.json";
+
+productsLink = "Tamplate-103-CoffeeKing-Bootstrap/json/productsData.json";
+menuLink =  "../json/menuData.json" | "../Tamplate-103-CoffeeKing-Bootstrap/json/menuData.json";
+
 // get data function -------------------------------------
 function getData(link) {
    var xhttp = new XMLHttpRequest();
