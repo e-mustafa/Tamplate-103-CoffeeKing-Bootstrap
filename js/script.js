@@ -21,14 +21,10 @@ let activeIndex = 0;
 
 function updateClasses() {
    bestCoffeeDots.forEach((item) => item.classList.remove("active"));
-   bestCoffeeImgs.forEach((item) => {
-      item.style.visibility = "hidden";
-      item.style.opacity = 0;
-   });
-   bestCoffeeDots[activeIndex].classList.add("active");
+   bestCoffeeImgs.forEach((item) => item.classList.remove("active"));
 
-   bestCoffeeImgs[activeIndex].style.visibility = "visible";
-   bestCoffeeImgs[activeIndex].style.opacity = 1;
+   bestCoffeeDots[activeIndex].classList.add("active");
+   bestCoffeeImgs[activeIndex].classList.add("active");
 }
 
 function changeIndex() {
@@ -49,7 +45,7 @@ bestContent.addEventListener("mouseover", function () {
    clearInterval(bestSlider);
 });
 bestContent.addEventListener("mouseout", function () {
-   bestSlider = setInterval(changeIndex, 6000);
+   bestSlider = setInterval(changeIndex, 4000);
 });
 // -------------------------------------- End best coffee section slider --------------------------------------
 
@@ -143,7 +139,7 @@ productTypesItem.forEach((item) =>
       productTypesItem.forEach((remove) => remove.classList.remove("active"));
       e.target.classList.add("active");
 
-      if (e.target.type != /All/i) {
+      if (e.target.type != "All") {
          var filteredData = productsData.filter((f) =>
          f.type.toLowerCase().includes(e.target.type.toLowerCase())
          );
@@ -158,38 +154,41 @@ productTypesItem.forEach((item) =>
 var ourMenuSection = document.querySelector(".our-menu .row");
 ourMenuSection.innerHTML = "";
 menuData &&
-   menuData.forEach((e) => {
-      ourMenuSection.innerHTML += `<div class="col">
-      <div class="menu-item card flex-row gap-3 p-3 align-items-center shadow">
-         <div> <img src="${e.imgSrc}" alt="${e.name}" width="70"> </div>
-         <div class="menu-info  flex-grow-1">
-            <h5>${e.name}</h5>
-            <small class="m-0">${e.description}</small>
-         </div>
-         <div class="menu-price">
-            <h5 class="m-0">$<span>${e.price}</span></h5>
-         </div>
+menuData.forEach((e) => {
+   ourMenuSection.innerHTML += `<div class="col">
+   <div class="menu-item card flex-row gap-3 p-3 align-items-center shadow">
+      <div> <img src="${e.imgSrc}" alt="${e.name}" width="70"> </div>
+      <div class="menu-info  flex-grow-1">
+         <h5>${e.name}</h5>
+         <small class="m-0">${e.description}</small>
       </div>
-   </div>`;
-   });
+      <div class="menu-price">
+         <h5 class="m-0">$<span>${e.price}</span></h5>
+      </div>
+   </div>
+</div>`;
+});
 
 // --------------------------------Start add item to shopping cart -------------------------------------
-var shoppingCart = [];
+let shoppingCart = [];
 
-var totalCartItems = 0;
-var subTotalPrice = 0;
-var addToCartbtn = document.querySelectorAll(".addToCartbtn");
-var cartProducts = document.querySelector("#cartProducts");
+let totalCartItems = 0;
+let subTotalPrice = 0;
+const addToCartbtn = document.querySelectorAll(".addToCartbtn");
+const cartProducts = document.querySelector("#cartProducts");
 
-var cartBadge = document.querySelector(".navbar .cart-badge");
-var itemCount = document.querySelector(".offcanvas-cart .item-count");
-var totalMoney = document.querySelector(".offcanvas-cart .total-money");
+const cartBadge = document.querySelector(".navbar .cart-badge");
+const itemCount = document.querySelector(".offcanvas-cart .item-count");
+const totalMoney = document.querySelector(".offcanvas-cart .total-money");
 
-var clearCart = document.querySelector(".clearCart");
+const clearCart = document.querySelector(".clearCart");
+const checkoutBtn = document.querySelector(".checkout");
 
-var emptyCartImg = document.querySelector(".empty-cart");
+const emptyCartImg = document.querySelector(".empty-cart");
 
-var emptyCartDiv = `
+const tostAddedSuccessfully = document.getElementById("addedSuccessfully");
+
+let emptyCartDiv = `
 <div class="empty-cart h-100 d-flex align-items-center">
    <img src="images/empty-cart.png" alt="empty cart" width="100%">
 </div>`;
@@ -212,7 +211,17 @@ function totalCartItemsF() {
    itemCount.innerHTML = totalCartItems;
    cartBadge.innerHTML = totalCartItems;
 }
-
+// enable or disable clear and checkout Buttons
+function OnOffFooterBtns() {
+   if (shoppingCart.length == 0) {
+      cartProducts.innerHTML = emptyCartDiv;
+      clearCart.setAttribute("disabled","");
+      checkoutBtn.setAttribute("disabled","");
+   }else{
+      clearCart.removeAttribute("disabled");
+      checkoutBtn.removeAttribute("disabled");
+   }
+}
 function addToCartF(id) {
    productIndex = productsData.findIndex((i) => i.id === id);
 
@@ -224,18 +233,24 @@ function addToCartF(id) {
       renderCartItems();
       totalCartItemsF();
       totalMoneyF();
+      addTost({title: "Warring", message: "Product Aready in Cart"});
    } else {
       shoppingCart.push({ ...productsData[productIndex], quantity: 1 });
       renderCartItems();
       totalCartItemsF();
       totalMoneyF();
+      // const toast = new bootstrap.Toast(tostAddedSuccessfully);
+      // toast.show();
+      addTost({title: "Success", message: "Product Added Successfully"});
    }
+   localStorage.setItem("coffeKingShoppingCart", JSON.stringify(shoppingCart));
+   OnOffFooterBtns();
 }
 
 // render Cart Items
 function renderCartItems() {
    cartProducts.innerHTML = "";
-   shoppingCart.forEach((e) => {
+   shoppingCart && shoppingCart.forEach((e) => {
       cartProducts.innerHTML += `
       <div class="product-item d-flex align-items-center gap-2 position-relative mb-4">
          <div class="remove-item position-absolute top-0 start-0">
@@ -245,9 +260,9 @@ function renderCartItems() {
             </button>
          </div>
          <div> <img src="${e.imgSrc}" alt="${e.name}" width="90"> </div>
-         <div class="flex-grow-1">
-            <h5>${e.name}</h5>
-            <span>${e.description}</span>
+         <div class="overflow-hidden flex-grow-1">
+            <h5 class="product-name">${e.name}</h5>
+            <span class="proudct-description">${e.description}</span>
             <div class="d-flex justify-content-between">
                <h5 class="d-flex w-100">
                   <span class="old-price ${ e.decount && `text-decoration-line-through` } ">
@@ -283,6 +298,7 @@ function increment(id) {
    renderCartItems();
    totalCartItemsF();
    totalMoneyF();
+   localStorage.setItem("coffeKingShoppingCart", JSON.stringify(shoppingCart));
 }
 
 function decrement(id) {
@@ -292,9 +308,10 @@ function decrement(id) {
    renderCartItems();
    totalCartItemsF();
    totalMoneyF();
+   localStorage.setItem("coffeKingShoppingCart", JSON.stringify(shoppingCart));
 }
 
-//  removeItemFromCart
+//  removeItemFromCart ----------
 function removeItemFromCart(id) {
    shoppingCart.splice(
       shoppingCart.findIndex((i) => i.id === id),
@@ -303,15 +320,18 @@ function removeItemFromCart(id) {
    renderCartItems();
    totalCartItemsF();
    totalMoneyF();
-   shoppingCart.length == 0 && (cartProducts.innerHTML = emptyCartDiv);
+   OnOffFooterBtns();
+   localStorage.setItem("coffeKingShoppingCart", JSON.stringify(shoppingCart));
 }
-
+// clear shopping cart ---------
 clearCart.addEventListener("click", function () {
    shoppingCart = [];
    renderCartItems();
    totalCartItemsF();
    totalMoneyF();
-   cartProducts.innerHTML = emptyCartDiv;
+   // cartProducts.innerHTML = emptyCartDiv;
+   OnOffFooterBtns();
+   localStorage.setItem("coffeKingShoppingCart", JSON.stringify(shoppingCart));
 });
 
 // -------------------------------- End add item to shopping cart -------------------------------------
@@ -347,21 +367,19 @@ function renderFavoriteCart() {
          <div>
             <img src="${e.imgSrc}" alt="${e.name}" width="90">
          </div>
-         <div class="flex-grow-1">
-            <h5>${e.name}</h5>
-            <span>${e.description}</span>
+         <div class="overflow-hidden flex-grow-1">
+            <h5 class="product-name">${e.name}</h5>
+            <span class="proudct-description">${e.description}</span>
             <div class="d-flex justify-content-between">
                <h5 class="d-flex w-100">
                   <span class="old-price ${e.decount && "text-decoration-line-through" }">$${e.price}</span>
-                  <span class="new-price flex-grow-1 text-center text-info ">${ e.decount ? `$${e.newPrice}` : "" } </span>
+                  ${ e.decount ? `<span class="new-price flex-grow-1 text-center text-info "> $${e.newPrice}</span>` : "" }
                </h5>
                <div>
-                  <div>
-                     <button class="btn btn-info text-white" type="button" title="Add To Cart"
-                     onclick="addToCartF(${e.id})">
-                        <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                     </button>
-                  </div>
+                  <button class="btn btn-info text-white" type="button" title="Add To Cart"
+                  onclick="addToCartF(${e.id})">
+                     <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                  </button>
                </div>
             </div>
             <hr class="m-1">
@@ -372,13 +390,18 @@ function renderFavoriteCart() {
 
 function addToFavorite(id) {
    if (favoriteCart.find((e) => e.id === id) != undefined) {
-      alert("This item aready added to favorite list");
+      // alert("This item aready added to favorite list");
+      // const toast = new bootstrap.Toast(toastLiveExample);
+      // toast.show();
+      addTost({ title: "Warring", message: "Product Aready in Favorite" });
    } else {
       favoriteCart.push(productsData[productsData.findIndex((e) => e.id === id)]);
       renderFavoriteCart();
       favoriteBadge.innerHTML = favoriteCart.length;
       itemCountFavorite.innerHTML = favoriteCart.length;
+      addTost({ title: "Success", message: "Product Added Successfully" });
    }
+   localStorage.setItem("coffeKingFavoriteCart", JSON.stringify(favoriteCart));
 }
 
 function removeFavoriteItem(id) {
@@ -388,6 +411,7 @@ function removeFavoriteItem(id) {
    itemCountFavorite.innerHTML = favoriteCart.length;
 
    favoriteCart.length == 0 && (favoriteProducts.innerHTML = emptyFavoriteDiv);
+   localStorage.setItem("coffeKingFavoriteCart", JSON.stringify(favoriteCart));
 }
 
 function clearFavoriteF() {
@@ -397,9 +421,33 @@ function clearFavoriteF() {
    itemCountFavorite.innerHTML = favoriteCart.length;
 
    favoriteProducts.innerHTML = emptyFavoriteDiv;
+   localStorage.setItem("coffeKingFavoriteCart", JSON.stringify(favoriteCart));
 }
 clearFavorite.addEventListener("click", clearFavoriteF);
 // -------------------------------- end add item to Favorite cart -------------------------------------
+
+
+// local storage get element if exest -------------------------------------
+onload = function (){
+   if (localStorage.coffeKingShoppingCart){
+      shoppingCart = JSON.parse(localStorage.getItem("coffeKingShoppingCart"));
+      renderCartItems();
+      totalCartItemsF();
+      totalMoneyF();
+      OnOffFooterBtns();
+   }
+
+   if(this.localStorage.coffeKingFavoriteCart){
+      favoriteCart = JSON.parse(this.localStorage.getItem("coffeKingFavoriteCart"));
+      renderFavoriteCart();
+      favoriteBadge.innerHTML = favoriteCart.length;
+      itemCountFavorite.innerHTML = favoriteCart.length;
+   }
+}
+
+
+
+
 // to tooltip work ------------------------------------------------
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 const tooltipTriggerListBs = document.querySelectorAll('[data-toggle="tooltip"]');
