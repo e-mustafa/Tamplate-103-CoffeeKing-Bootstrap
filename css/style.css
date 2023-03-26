@@ -24,7 +24,10 @@
 body {
   text-transform: capitalize;
 }
-
+::selection{
+  background-color: var(--color-info);
+  color: var(--bs-white);
+}
 a {
   text-decoration: none;
 }
@@ -37,6 +40,9 @@ ul {
 }
 .fs-8 {
   font-size: 13px !important;
+}
+.fs-10 {
+  font-size: 10px !important;
 }
 .c-pointer {
   cursor: pointer;
@@ -502,6 +508,37 @@ ul {
    90% { transform: translateY(-55px) ; -webkit-transform: translateY(-55px) ; -moz-transform: translateY(-55px) ; -ms-transform: translateY(-55px) ; -o-transform: translateY(-55px) ; }
    100% { transform: translateY(-50px) ; -webkit-transform: translateY(-50px) ; -moz-transform: translateY(-50px) ; -ms-transform: translateY(-50px) ; -o-transform: translateY(-50px) ; }
 } */
+
+.toasts-container{
+  z-index: 99;
+
+}
+.toast-item{
+  background-color: rgb(255 255 255 / 88%);
+  transform: translateX(-200%);
+  opacity: 0;
+}
+.toast-animat{
+  -webkit-animation: toastIt 3s ease-in-out ;
+  animation: toastIt 3s ease-in-out forwards;
+}
+.toast-item .tost-inner {
+  border-left: 5px solid var(--color-info);
+}
+
+@keyframes toastIt {
+  10% , 85%{
+    transform: translateX(0);
+    opacity: 1;
+  }
+  95% {
+    transform: translateX(-200%);
+    opacity: 0;
+  }
+  100% {
+    display: none;
+  }
+}
 
 /* --------------------------- section 06 best coffee --------------------------- */
 .best-coffee .best-info {

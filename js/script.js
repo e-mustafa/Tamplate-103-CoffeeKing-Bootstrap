@@ -13,10 +13,10 @@ onscroll = scrollToTop;
 
 
 // -------------------------------------- Start best coffee section slider --------------------------------------
-var bestCoffeeImgs = document.querySelectorAll(".best-coffee-imgs img");
-var bestCoffeeDots = document.querySelectorAll(".best-coffee-dots li");
+const bestCoffeeImgs = document.querySelectorAll(".best-coffee-imgs img");
+const bestCoffeeDots = document.querySelectorAll(".best-coffee-dots li");
 
-var bestContent = document.querySelector(".best-coffee .best-content");
+const bestContent = document.querySelector(".best-coffee .best-content");
 let activeIndex = 0;
 
 function updateClasses() {
@@ -39,7 +39,7 @@ bestCoffeeDots.forEach((element) => {
    });
 });
 
-var bestSlider = setInterval(changeIndex, 4000);
+let bestSlider = setInterval(changeIndex, 4000);
 
 bestContent.addEventListener("mouseover", function () {
    clearInterval(bestSlider);
@@ -54,8 +54,8 @@ menuLink = "json/menuData.json";
 
 // get data function -------------------------------------
 function getData(link) {
-   var xhttp = new XMLHttpRequest();
-   var data;
+   let xhttp = new XMLHttpRequest();
+   let data = {};
    xhttp.onreadystatechange = function () {
       if (this.readyState == 4 && this.status == 200) {
          data = JSON.parse(this.responseText);
@@ -67,13 +67,13 @@ function getData(link) {
 }
 
 // products data
-var productsData = getData(productsLink);
+let productsData = getData(productsLink);
 
 // menu data
-var menuData = getData(menuLink);
+let menuData = getData(menuLink);
 
 // ------------------------------------- show products -------------------------------------
-var ourShopSection = document.querySelector(".our-shop .products");
+const ourShopSection = document.querySelector(".our-shop .products");
 
 function showProducts(data) {
    ourShopSection.innerHTML = "";
@@ -132,7 +132,7 @@ function showProducts(data) {
 showProducts(productsData);
 
 // ------------------------------------- filter products -------------------------------------
-var productTypesItem = document.querySelectorAll(".product-types li");
+const productTypesItem = document.querySelectorAll(".product-types li");
 
 productTypesItem.forEach((item) =>
    item.addEventListener("click", function (e) {
@@ -140,7 +140,7 @@ productTypesItem.forEach((item) =>
       e.target.classList.add("active");
 
       if (e.target.type != "All") {
-         var filteredData = productsData.filter((f) =>
+         let filteredData = productsData.filter((f) =>
          f.type.toLowerCase().includes(e.target.type.toLowerCase())
          );
          showProducts(filteredData);
@@ -150,8 +150,8 @@ productTypesItem.forEach((item) =>
    })
 );
 
-// ------------------------------------- show menu -------------------------------------
-var ourMenuSection = document.querySelector(".our-menu .row");
+// ------------------------------------- show menu items -------------------------------------
+const ourMenuSection = document.querySelector(".our-menu .row");
 ourMenuSection.innerHTML = "";
 menuData &&
 menuData.forEach((e) => {
@@ -169,7 +169,53 @@ menuData.forEach((e) => {
 </div>`;
 });
 
-// --------------------------------Start add item to shopping cart -------------------------------------
+
+// add Toast notifications and auto remove after 4 socends ------------------------------------------------
+let toastArray = [];
+const toastContainer = document.getElementById("toastContainer");
+
+function addToast(message){
+   if (toastArray.length > 3) {
+      toastArray.pop()
+      toastArray.unshift(message);
+   }else{
+      toastArray.unshift(message)
+   }
+   let newTost = document.createElement("div");
+   newTost.setAttribute("class", "toast-item p-2 rounded mb-2 shadow w-100")
+
+   newTost.innerHTML = `
+   <div class="tost-inner ">
+      <div class=" d-flex align-items-center ps-3">
+         <i class="fa-solid ${message.title === "Warning"? "fa-circle-exclamation text-warning": "fa-circle-check text-success"} fa-lg "></i>
+         <div class="tost-info flex-grow-1 px-2">
+            <h6 class=" text-info mb-0">${message.title},</h6>
+            <small> ${message.message}</small>
+         </div>
+         <button type="button" class="btn-close m-auto fs-10" aria-label="Close"></button>
+      </div>
+   </div>
+   `;
+   newTost.classList.add("toast-animat");
+   toastContainer.appendChild(newTost)
+
+   let newTostBtns = document.querySelectorAll(".toast-item button");
+   newTostBtns.forEach(cBtn => {
+      cBtn.addEventListener("click", ()=> cBtn.closest(".toast-item").remove())
+   })
+
+   // while (newTostBtns.length > 3) { newTost.remove()} // browser crush
+   // if (toastContainer.children.length > 3) { toastContainer.children[toastContainer.children.length -1].remove();}
+
+   let autoClearToast = setTimeout(()=>{
+      newTost.classList.remove("toast-animat");
+      newTost.remove();
+      toastArray.pop()
+   },4100)
+}
+
+
+// -------------------------------- Start add item to shopping cart -------------------------------------
 let shoppingCart = [];
 
 let totalCartItems = 0;
@@ -230,21 +276,16 @@ function addToCartF(id) {
       shoppingCart.find((e) => e.id === id) != undefined
    ) {
       shoppingCart[shoppingCart.findIndex((i) => i.id === id)].quantity += 1;
-      renderCartItems();
-      totalCartItemsF();
-      totalMoneyF();
-      addTost({title: "Warring", message: "Product Aready in Cart"});
+      addToast({title: "Warning", message: "Product Aready in Cart"});
    } else {
       shoppingCart.push({ ...productsData[productIndex], quantity: 1 });
-      renderCartItems();
-      totalCartItemsF();
-      totalMoneyF();
-      // const toast = new bootstrap.Toast(tostAddedSuccessfully);
-      // toast.show();
-      addTost({title: "Success", message: "Product Added Successfully"});
+      addToast({title: "Success", message: "Product Added Successfully" });
    }
-   localStorage.setItem("coffeKingShoppingCart", JSON.stringify(shoppingCart));
+   renderCartItems();
+   totalCartItemsF();
+   totalMoneyF();
    OnOffFooterBtns();
+   localStorage.setItem("coffeKingShoppingCart", JSON.stringify(shoppingCart));
 }
 
 // render Cart Items
@@ -313,14 +354,12 @@ function decrement(id) {
 
 //  removeItemFromCart ----------
 function removeItemFromCart(id) {
-   shoppingCart.splice(
-      shoppingCart.findIndex((i) => i.id === id),
-      1
-   );
+   shoppingCart.splice( shoppingCart.findIndex((i) => i.id === id), 1 );
    renderCartItems();
    totalCartItemsF();
    totalMoneyF();
    OnOffFooterBtns();
+   addToast({ title: "Success", message: "Product Removed Successfully" });
    localStorage.setItem("coffeKingShoppingCart", JSON.stringify(shoppingCart));
 }
 // clear shopping cart ---------
@@ -329,7 +368,6 @@ clearCart.addEventListener("click", function () {
    renderCartItems();
    totalCartItemsF();
    totalMoneyF();
-   // cartProducts.innerHTML = emptyCartDiv;
    OnOffFooterBtns();
    localStorage.setItem("coffeKingShoppingCart", JSON.stringify(shoppingCart));
 });
@@ -337,19 +375,18 @@ clearCart.addEventListener("click", function () {
 // -------------------------------- End add item to shopping cart -------------------------------------
 
 // --------------------------------Start add item to Favorite cart -------------------------------------
+let favoriteCart = [];
+let totalFavoriteItems = 0;
 
-var favoriteCart = [];
-var totalFavoriteItems = 0;
+const addToFavoritebtn = document.querySelectorAll(".addToFavorite");
+const favoriteProducts = document.querySelector("#favoriteProducts");
 
-var addToFavoritebtn = document.querySelectorAll(".addToFavorite");
-var favoriteProducts = document.querySelector("#favoriteProducts");
+const favoriteBadge = document.querySelector(".navbar .favorite-badge");
+const itemCountFavorite = document.querySelector(".offcanvas-favorite .item-count");
 
-var favoriteBadge = document.querySelector(".navbar .favorite-badge");
-var itemCountFavorite = document.querySelector(".offcanvas-favorite .item-count");
+const clearFavorite = document.querySelector(".clear-favorite");
 
-var clearFavorite = document.querySelector(".clear-favorite");
-
-var emptyFavoriteDiv = `
+let emptyFavoriteDiv = `
 <div class="empty-favorite h-100 d-flex align-items-center">
    <img src="images/empty-wishlist.svg" alt="empty-wishlist" width="100%">
 </div>`;
@@ -387,21 +424,29 @@ function renderFavoriteCart() {
       </div>`)
    );
 }
+// disable Clear Button if favorite list is empty---
+function onOfFavorateClearBtn() {
+   if(favoriteCart.length === 0){
+      favoriteProducts.innerHTML = emptyFavoriteDiv;
+      clearFavorite.setAttribute("disabled","")
+   }else{
+      clearFavorite.removeAttribute("disabled")
+   }
+}
+onOfFavorateClearBtn();
 
 function addToFavorite(id) {
    if (favoriteCart.find((e) => e.id === id) != undefined) {
-      // alert("This item aready added to favorite list");
-      // const toast = new bootstrap.Toast(toastLiveExample);
-      // toast.show();
-      addTost({ title: "Warring", message: "Product Aready in Favorite" });
+      addToast({ title: "Warning", message: "Product Aready in Favorite" });
    } else {
       favoriteCart.push(productsData[productsData.findIndex((e) => e.id === id)]);
       renderFavoriteCart();
       favoriteBadge.innerHTML = favoriteCart.length;
       itemCountFavorite.innerHTML = favoriteCart.length;
-      addTost({ title: "Success", message: "Product Added Successfully" });
+      addToast({ title: "Success", message: "Product Added Successfully" });
    }
    localStorage.setItem("coffeKingFavoriteCart", JSON.stringify(favoriteCart));
+   onOfFavorateClearBtn();
 }
 
 function removeFavoriteItem(id) {
@@ -410,8 +455,9 @@ function removeFavoriteItem(id) {
    favoriteBadge.innerHTML = favoriteCart.length;
    itemCountFavorite.innerHTML = favoriteCart.length;
 
-   favoriteCart.length == 0 && (favoriteProducts.innerHTML = emptyFavoriteDiv);
+   addToast({ title: "Success", message: "Product Removed Successfully" });
    localStorage.setItem("coffeKingFavoriteCart", JSON.stringify(favoriteCart));
+   onOfFavorateClearBtn();
 }
 
 function clearFavoriteF() {
@@ -420,12 +466,11 @@ function clearFavoriteF() {
    favoriteBadge.innerHTML = favoriteCart.length;
    itemCountFavorite.innerHTML = favoriteCart.length;
 
-   favoriteProducts.innerHTML = emptyFavoriteDiv;
    localStorage.setItem("coffeKingFavoriteCart", JSON.stringify(favoriteCart));
+   onOfFavorateClearBtn();
 }
 clearFavorite.addEventListener("click", clearFavoriteF);
 // -------------------------------- end add item to Favorite cart -------------------------------------
-
 
 // local storage get element if exest -------------------------------------
 onload = function (){
@@ -444,9 +489,6 @@ onload = function (){
       itemCountFavorite.innerHTML = favoriteCart.length;
    }
 }
-
-
-
 
 // to tooltip work ------------------------------------------------
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
