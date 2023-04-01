@@ -104,7 +104,7 @@ function handelRegister(e) {
    if(checkUser() && checkEmail() && checkPass() && checkPassC() && checkTerms()){
       let data = {username:R_user_name.value.trim(), email: R_email.value.trim(), password : R_password.value.trim()};
       localStorage.setItem("userRegistration", JSON.stringify(data))
-      setTimeout( () => window.location.assign("/signin.html") ,1500)
+      setTimeout( () => window.location.assign("signin.html") ,1500)
    }
 }
 form_register.addEventListener("submit", handelRegister);
