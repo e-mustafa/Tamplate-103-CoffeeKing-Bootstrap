@@ -228,7 +228,7 @@ const itemCount = document.querySelector(".offcanvas-cart .item-count");
 const totalMoney = document.querySelector(".offcanvas-cart .total-money");
 
 const clearCart = document.querySelector(".clearCart");
-const checkoutBtn = document.querySelector(".checkout");
+const go_to_checkoutBtn = document.querySelector("#go_to_checkout");
 
 const emptyCartImg = document.querySelector(".empty-cart");
 
@@ -262,10 +262,10 @@ function OnOffFooterBtns() {
    if (shoppingCart.length == 0) {
       cartProducts.innerHTML = emptyCartDiv;
       clearCart.setAttribute("disabled","");
-      checkoutBtn.setAttribute("disabled","");
+      go_to_checkoutBtn.setAttribute("disabled","");
    }else{
       clearCart.removeAttribute("disabled");
-      checkoutBtn.removeAttribute("disabled");
+      go_to_checkoutBtn.removeAttribute("disabled");
    }
 }
 function addToCartF(id) {
@@ -436,17 +436,22 @@ function onOfFavorateClearBtn() {
 onOfFavorateClearBtn();
 
 function addToFavorite(id) {
-   if (favoriteCart.find((e) => e.id === id) != undefined) {
-      addToast({ title: "Warning", message: "Product Aready in Favorite" });
-   } else {
-      favoriteCart.push(productsData[productsData.findIndex((e) => e.id === id)]);
-      renderFavoriteCart();
-      favoriteBadge.innerHTML = favoriteCart.length;
-      itemCountFavorite.innerHTML = favoriteCart.length;
-      addToast({ title: "Success", message: "Product Added Successfully" });
+   if(localStorage.getItem("userRegistration")){
+      if (favoriteCart.find((e) => e.id === id) != undefined) {
+         addToast({ title: "Warning", message: "Product Aready in Favorite" });
+      } else {
+         favoriteCart.push(productsData[productsData.findIndex((e) => e.id === id)]);
+         renderFavoriteCart();
+         favoriteBadge.innerHTML = favoriteCart.length;
+         itemCountFavorite.innerHTML = favoriteCart.length;
+         addToast({ title: "Success", message: "Product Added Successfully" });
+      }
+      localStorage.setItem("coffeKingFavoriteCart", JSON.stringify(favoriteCart));
+      onOfFavorateClearBtn();
+   }else{
+      addToast({ title: "Warning", message: "Please Sign In First" });
+      setTimeout(() => window.location.assign("signin.html"), 2000)
    }
-   localStorage.setItem("coffeKingFavoriteCart", JSON.stringify(favoriteCart));
-   onOfFavorateClearBtn();
 }
 
 function removeFavoriteItem(id) {
@@ -494,3 +499,89 @@ onload = function (){
 const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
 const tooltipTriggerListBs = document.querySelectorAll('[data-toggle="tooltip"]');
 const tooltipList = [...tooltipTriggerList, ...tooltipTriggerListBs].map((El) => new bootstrap.Tooltip(El));
+
+
+// static section data, render, increscout when scroll ---------------------------------
+const statistics = [
+   {type: "Total Branches", count: 34, img: "images/statistics total branches.svg"},
+   {type: "Happy Customer", count: 1520, img: "images/statistics happy customer.svg" },
+   {type: "Professional Chefs", count: 120, img: "images/statistics chef.svg" },
+   {type: "Years Of Experience", count: 55, img: "images/statistics years of experience.svg" },
+]
+
+const statisticsWrapper = document.getElementById("statisticsWrapper");
+function RenderStatistics() {
+   statisticsWrapper.innerHTML = "";
+   statistics.forEach(e => {
+      statisticsWrapper.innerHTML += `
+      <div class="col">
+         <div class="statistic-item d-flex flex-column justify-content-center align-items-center h-100 mt-3 ms-3">
+            <div class="statistic-icon">
+               <img src="${e.img}" alt="total branches" width="60">
+            </div>
+            <h2 class="statistic-title mt-4" data-goal="${e.count}" >0</h2>
+            <h4>+ ${e.type}</h4>
+         </div>
+      </div>`;
+   })
+}
+RenderStatistics();
+const statisticItem = document.querySelectorAll(".statistic-item .statistic-title");
+let isStarted = false;
+
+onscroll = () => {
+   if (window.scrollY  >= statisticsWrapper.offsetTop - (innerHeight - statisticsWrapper.clientHeight)) {
+      (!isStarted) && statisticItem.forEach((e) => incrementStatistics(e));
+      isStarted = true ;
+   }
+};
+
+function incrementStatistics(item) {
+   let goal = item.dataset.goal;
+   let counter = setInterval(()=> {
+      if (goal > 1000) {
+         item.textContent = parseInt(item.textContent) + 5
+      }else{
+         item.textContent++;
+      }
+      item.textContent == goal && clearInterval(counter);
+   },2000 / goal)
+}
+
+// user icon show/hide when user login or log out ----------------------------------------
+const unSingnedUser = document.getElementById("unSingnedUser");
+const singnedUser = document.getElementById("singnedUser");
+
+const ul_username = document.querySelector("#singnedUser h6");
+
+function togleUserIconF(){
+   if (localStorage.getItem("userRegistration")) {
+      unSingnedUser.style.display = "none";
+      singnedUser.style.display = "block";
+      const data = JSON.parse(localStorage.getItem("userRegistration"));
+      ul_username.textContent = data.username;
+      singnedUser.firstElementChild.title = data.username
+   } else {
+      singnedUser.style.display = "none";
+      unSingnedUser.style.display = "block";
+   }
+}
+togleUserIconF()
+
+
+function signOut() {
+   localStorage.removeItem("userRegistration");
+   window.location = "register.html";
+   togleUserIconF()
+}
+
+
+// go_to_checkout function
+function go_to_checkoutF() {
+   if(localStorage.getItem("userRegistration")){
+      window.location.assign("underconstp.html");
+   }else{
+      addToast({ title: "Warning", message: "Please Sign In First" });
+      setTimeout(() => window.location.assign("signin.html"), 2000);
+   }
+}

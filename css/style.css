@@ -99,6 +99,11 @@ ul {
   header .favorite-cart {
     color: var(--color-info);
   }
+
+  #unSingnedUser .dropdown-menu,
+  #singnedUser .dropdown-menu{
+    position: static ;
+  }
 }
 @media (min-width: 992px) {
   header .navbar-nav .nav-link {
@@ -124,6 +129,11 @@ ul {
     width: 80%;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   }
+
+  #unSingnedUser .dropdown-menu,
+  #singnedUser .dropdown-menu{
+    position: absolute; 
+  }
 }
 
 /* navbar-toggler ANIMATED X ----------------------------- */
@@ -133,6 +143,9 @@ ul {
 .navbar-toggler.x:focus {
   outline: 0;
   box-shadow: none;
+}
+#singnedUser{
+  display: none;
 }
 .navbar-toggler.x[aria-expanded="true"] .icon-bar:nth-of-type(1) {
   -webkit-transform: rotate(45deg);
@@ -503,12 +516,6 @@ ul {
   background-color: var(--color-primary);
 }
 
-/* @keyframes card-icons {
-   0% { transform: translateY(0) ; -webkit-transform: translateY(0) ; -moz-transform: translateY(0) ; -ms-transform: translateY(0) ; -o-transform: translateY(0) ; }
-   90% { transform: translateY(-55px) ; -webkit-transform: translateY(-55px) ; -moz-transform: translateY(-55px) ; -ms-transform: translateY(-55px) ; -o-transform: translateY(-55px) ; }
-   100% { transform: translateY(-50px) ; -webkit-transform: translateY(-50px) ; -moz-transform: translateY(-50px) ; -ms-transform: translateY(-50px) ; -o-transform: translateY(-50px) ; }
-} */
-
 .toasts-container{
   z-index: 99;
 
@@ -790,7 +797,6 @@ footer .footer-logo {
   border-radius: 50%;
   -webkit-transition: 0.3s ease-in;
   transition: 0.3s ease-in;
-
   color: var(--color-info);
   position: relative;
   z-index: 2;

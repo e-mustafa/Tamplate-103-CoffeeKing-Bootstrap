@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="css/bootstrap.css">            <!--  bootstrap link -->
+   <link rel="stylesheet" href="css/all.min.css">              <!--  fontawesome link -->
+   <link rel="stylesheet" href="css/sign-up-in.css">
+   <title>Register</title>
+</head>
+<body>
+   <div class="container d-flex justify-content-center align-items-center mx-auto h-100">
+   <div class="register w-100 p-5 shadow-lg position-relative">
+
+      <form id="form_register">
+         <img class="mb-4 mx-auto" src="images/logo_white-7.png" alt="CoffeeKing"  height="57">
+         <h1 class="h3 mb-3 fw-bold text-center text-light section-title">Register New Account</h1>
+
+         <div class="input-group mb-2 required">      <!-- user name -->
+            <span class="input-group-text p-3">
+               <i class="fa fa-user"></i>
+            </span>
+            <input type="text" id="R_user_name" class="form-control rounded-end" placeholder="User Name">
+            <div class="invalid-feedback"></div>
+         </div>
+
+         <div class="input-group mb-2">      <!-- email -->
+            <span class="input-group-text p-3">
+               <i class="fa-solid fa-at"></i>
+            </span>
+            <input type="text" id="R_email" class="form-control rounded-end" placeholder="Email">
+            <div class="invalid-feedback"></div>
+         </div>
+
+         <div class="input-group mb-2">      <!-- password -->
+            <span class="input-group-text p-3">
+               <i class="fa fa-lock"></i>
+            </span>
+            <input type="password" id="R_password" class="form-control rounded-end pe-5 " placeholder="Password">
+            <div class="invalid-feedback"></div>
+            <i class="show-pass fa-solid fa-eye fa-lg"></i>
+            <i class="hide-pass fa-solid fa-eye-slash fa-lg"></i>
+         </div>
+
+         <div class="input-group mb-2">      <!-- confirm password -->
+            <span class="input-group-text p-3">
+               <i class="fa-solid fa-check-double"></i>
+            </span>
+            <input type="password" id="R_password_confirm" class="form-control rounded-end pe-5 " placeholder="Confirm Password">
+            <div class="invalid-feedback"></div>
+            <i class="show-pass fa-solid fa-eye fa-lg"></i>
+            <i class="hide-pass fa-solid fa-eye-slash fa-lg"></i>
+         </div>
+
+         <div class="checkbox mb-3">
+            <label class="text-light">
+               <input type="checkbox" id="accept_terms" class="user-select-none checkbox-lg" value="Accept Terms and Conditions" >Accept Terms and Conditions
+               <a href="#">Read</a>
+               <div class="invalid-feedback text-center"></div>
+            </label>
+         </div>
+         <button type="submit" class="w-100 btn btn-lg btn-primary">Register</button>
+      </form>
+
+      <p class="mt-4">Aready have an Account? Go to <a class="text-secondary shadow" href="signin.html">Sign In</a></p>
+   </div>
+
+
+   <script src="js/popper-2.11.6.minjs.js"></script>        <!--  popper script -->
+   <script src="js/bootstrap.bundle.min.js"></script>       <!--  bootstrap script -->
+   <script src="js/register.js"></script>                     <!--  my script -->
+</body>
+</html>
