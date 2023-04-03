@@ -50,7 +50,7 @@ function handelSignin(e) {
       if(localStorage.getItem("userRegistration") && (S_username.value.trim() === data.username && S_password.value.trim() === data.password)){
          console.log("all same");
          feedback_div.textContent = ""
-         setTimeout( () => window.location.assign("/index.html") ,1500)
+         setTimeout( () => window.location.assign("index.html" ,1500))
       }else{
          feedback_div.textContent = "Username or password is wrong!";
          S_password.focus();

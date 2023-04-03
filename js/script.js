@@ -1,3 +1,7 @@
+// loading image -------------
+const loading_img = document.getElementById("loading_img");
+console.log(loading_img);
+window.addEventListener("load", () => loading_img.classList.add("loading-img"));
 
 // scroll To Top button ------------------------------------------------
 const scrollToTopButton = document.querySelector("#scrollToTop a");

@@ -61,7 +61,16 @@ ul {
 .section-title {
   font-family: LobsterTwo;
 }
-
+/* ----------------------------- loading div ---------------------- */
+.loading-img{
+  height: 0 !important;
+  width: 0;
+  transition: .25s;
+  -webkit-transition: .25s;
+  -moz-transition: .25s;
+  -ms-transition: .25s;
+  -o-transition: .25s;
+}
 /* languages and currancy dropdown in head and footer --------------- */
 .lngs-cry .dropdown-toggle {
   border: 0;
@@ -399,7 +408,7 @@ ul {
   cursor: pointer;
   flex-shrink: 0;
   margin-bottom: 10px;
-  scroll-snap-align: start;
+  scroll-snap-align: center;
   scroll-snap-stop: always;
   -webkit-user-select: none;
   user-select: none;
@@ -663,7 +672,7 @@ ul {
   scroll-padding: 25px;
 }
 .reviews .reviews-container .col {
-  scroll-snap-align: start;
+  scroll-snap-align: center;
 }
 .reviews .review-item .customer-img {
   border: 2px dashed var(--color-primary);
