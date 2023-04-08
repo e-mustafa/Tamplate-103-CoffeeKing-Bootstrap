@@ -1,20 +1,6 @@
 // loading image -------------
 const loading_img = document.getElementById("loading_img");
-console.log(loading_img);
 window.addEventListener("load", () => loading_img.classList.add("loading-img"));
-
-// scroll To Top button ------------------------------------------------
-const scrollToTopButton = document.querySelector("#scrollToTop a");
-
-function scrollToTop() {
-   if (window.scrollY < window.innerHeight) {
-      scrollToTopButton.classList.replace("show", "hide");
-   }else{
-      scrollToTopButton.classList.replace("hide", "show")
-   }
-}
-onscroll = scrollToTop;
-
 
 // -------------------------------------- Start best coffee section slider --------------------------------------
 const bestCoffeeImgs = document.querySelectorAll(".best-coffee-imgs img");
@@ -533,11 +519,19 @@ RenderStatistics();
 const statisticItem = document.querySelectorAll(".statistic-item .statistic-title");
 let isStarted = false;
 
+// scroll To Top button ------------------------------------------------
+const scrollToTopButton = document.querySelector("#scrollToTop a");
+scrollToTopButton.addEventListener("click", () => scrollTo({top:0, behavior: "smooth"}));
+
 onscroll = () => {
    if (window.scrollY  >= statisticsWrapper.offsetTop - (innerHeight - statisticsWrapper.clientHeight)) {
       (!isStarted) && statisticItem.forEach((e) => incrementStatistics(e));
       isStarted = true ;
    }
+   // show/hide scroll To Top button ------------------------------------------------
+   window.scrollY >= window.innerHeight?
+   scrollToTopButton.classList.replace("hide", "show") || "show"
+   :scrollToTopButton.classList.replace("show", "hide") || "hide";
 };
 
 function incrementStatistics(item) {
